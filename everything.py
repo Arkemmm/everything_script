@@ -8,13 +8,14 @@ print("4. Courrants et signaux")
 print("5. Géométrie")
 
 groupe = float(input("Indiquez votre choix :"))
-#Variable importante
+# Les constantes
 pi = 3.14159265359
+g = 9,80665
 
 if groupe == 1:
     print("1. Energie cinétique")
     print("2. Energie potentiel de pesanteur")
-    print("3. Energie hydrolique")
+    print("3. Puissance hydraulique")
     print("4. Energie photovoltaïque")
 
     energie = float(input("Indiquez votre choix :"))
@@ -62,23 +63,23 @@ if groupe == 1:
             print("La masse de lo'bjet est de {:.2f} kg".format(masse))
     elif energie == 3:
         print("Quelle variable cherchez-vous ?")
-        print("1. E (en Joule)")
+        print("1. P (en W)")
         print("2. Débit (en m³/s)")
-        print("3. Hauteur (en m)")
-        energie_hydrolique = float(input("Indiquez votre choix :"))
-        if energie_hydrolique == 1:
-            EH_debit = float(input("Débit de l'objet :"))
-            EH_hauteur = float(input("Hauteur de l'objet :"))
-            EH_poids_specifique = float(input("Poids spécifique du fluide :"))
-            EH_energie = EH_debit * EH_hauteur * EH_poids_specifique
-            print("L'énergie hydraulique E = {:.2f} J".format(EH_energie))
-        elif energie_hydrolique == 2:
-            EH_hauteur = float(input("Hauteur de l'objet :"))
-            EH_poids_specifique = float(input("Poids spécifique du fluide :"))
-            EH_energie = float(input("Energie hydraulique de l'objet :"))
-            debit = EH_energie / (EH_hauteur * EH_poids_specifique)
-            print("Le débit de l'objet est de {:.2f} m³/s".format(debit))
-        elif energie_hydrolique == 3:
+        print("3. Δh (en m)")
+        puissance_hydraulique = float(input("Indiquez votre choix :"))
+        if puissance_hydraulique == 1:
+            d = float(input("Débit (en m³/s) :"))
+            h = float(input("Δh  (en m) :"))
+            mv = float(input("Masse volumique du fluide :"))
+            P = d*g*h*mv
+            print("La puissance hydraulique P = {:.3e} W".format(P))
+        elif puissance_hydraulique == 2:
+            P = float(input("Puissance hydraulique (en W) :"))
+            h = float(input("Δh  (en m) :"))
+            mv = float(input("Masse volumique du fluide :"))
+            d = P/(h*g*mv)
+            print("Le débit de l'objet est de {:.2f} m³/s".format(d))
+        elif puissance_hydraulique == 3:
             EH_debit = float(input("Débit de l'objet :"))
             EH_poids_specifique = float(input("Poids spécifique du fluide :"))
             EH_energie = float(input("Energie hydraulique de l'objet :"))
