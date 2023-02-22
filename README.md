@@ -2,8 +2,7 @@
 **Un script en Python qui permet de TOUT calculer enfin presque !
 Si vous souhaitez que j'ajoute des formules, demandez-moi.**
 
-=====================
-=====================
+
 
 Arbre des menus et sous-menus :
 
