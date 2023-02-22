@@ -80,12 +80,10 @@ if groupe == 1:
             d = P/(h*g*mv)
             print("Le débit de l'objet est de {:.2f} m³/s".format(d))
         elif puissance_hydraulique == 3:
-            EH_debit = float(input("Débit de l'objet :"))
-            EH_poids_specifique = float(input("Poids spécifique du fluide :"))
-            EH_energie = float(input("Energie hydraulique de l'objet :"))
-            hauteur = EH_energie / (EH_debit * EH_poids_specifique)
-            print("La hauteur de l'objet est de {:.2f} m".format(hauteur))
-
+            P = float(input("Puissance hydraulique (en W) :"))
+            d = float(input("Débit (en m³/s) :"))
+            mv = float(input("Masse volumique du fluide :"))
+            h = P/(d*g*mv)
     elif energie == 4:
         print("Quelle variable cherchez-vous ?")
         print("1. E (en Joule)")
