@@ -124,5 +124,6 @@ if groupe == 1:
 if groupe == 2:
     print("1. Résistance thermique")
     print("2. Flux thermique")
-    print("3. Energie hydrolique")
-    print("4. Energie photovoltaïque")
+    print("3. ")
+    print("4. ")
+    print("5. ")
