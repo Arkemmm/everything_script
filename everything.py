@@ -123,52 +123,76 @@ if groupe == 1:
     else:
         print("Choix non valide")
 if groupe == 2:
-    print("1. Résistance thermique")
+    print("1. Résistance thermique surfacique")
     print("2. Flux thermique")
     print("3. Echange thermique")
     print("4. Changement d'état")
     thermodynamique = float(input("Indiquez votre choix :"))
     if thermodynamique == 1:
         print("Quelle variable cherchez-vous ?")
-        print("1. R (en K/W)")
-        print("2. dT (en °C)")
-        print("3. P (en W)")
-    resistance_thermique = float(input("Indiquez votre choix :"))
-    if resistance_thermique == 1:
-        RT_temperature1 = float(input("Température de la source chaude (en °C) :"))
-        RT_temperature2 = float(input("Température de la source froide (en °C) :"))
-        RT_flux_thermique = float(input("Flux thermique (en W) :"))
-        Rth = (RT_temperature1 - RT_temperature2) / RT_flux_thermique
-        print("La résistance thermique R = {:.2f} K/W".format(Rth))
-    elif resistance_thermique == 2:
-        RT_temperature1 = float(input("Température de la source chaude (en °C) :"))
-        RT_temperature2 = float(input("Température de la source froide (en °C) :"))
-        RT_puissance = float(input("Puissance échangée (en W) :"))
-        dT = RT_temperature1 - RT_temperature2
-        Rth = dT / RT_puissance
-        print("La résistance thermique R = {:.2f} K/W".format(Rth))
-    elif resistance_thermique == 3:
-        RT_temperature1 = float(input("Température de la source chaude (en °C) :"))
-        RT_temperature2 = float(input("Température de la source froide (en °C) :"))
-        RT_flux_thermique = float(input("Flux thermique (en W) :"))
-        P = RT_flux_thermique * (RT_temperature1 - RT_temperature2)
-        print("La puissance échangée P = {:.2f} W".format(P))
+        print("1. Rth (en K/W)")
+        print("2. Epaisseur (en m)")
+        print("3. Conductivité thermique (en W/mK)")
+        resistance_thermique = float(input("Indiquez votre choix :"))
+        if resistance_thermique == 1:
+            epaisseur = float(input("Epaisseur (en mètre) :"))
+            conductivité = float(input("Conductivité thermique (en W/mK):"))
+            surface = float(input("Surface (en m²) :"))
+            Rths = (epaisseur*surface)/conductivité
+            print("Le résistance thermique Rths = {:.2f} K/W".format(Rths))
+        elif resistance_thermique == 2:
+            Rths = float(input("Résistance thermique (en K/W)) :"))
+            conductivité = float(input("Conductivité thermique (en W/mK):"))
+            surface = float(input("Surface (en m²) :"))
+            epaisseur = (Rths*conductivité)/surface
+            print("L'épaisseur E ' = {:.2f} m".format(epaisseur))
     elif thermodynamique == 2:
         print("Quelle variable cherchez-vous ?")
-        print("1. q (en W)")
+        print("1. Q (en W)")
         print("2. S (en m²)")
-        print("3. deltaT (en °C)")
+        print("3. ΔT (en °C)")
         flux_thermique = float(input("Indiquez votre choix :"))
         if flux_thermique == 1:
             FT_S = float(input("Surface d'échange thermique (en m²) :"))
-            FT_deltaT = float(input("Différence de température (en °C) :"))
-            q = FT_S * FT_deltaT
+            FT_ΔT = float(input("Différence de température (en °C) :"))
+            q = FT_S * FT_ΔT
             print("Le flux thermique q = {:.2f} W".format(q))
         elif flux_thermique == 2:
             FT_q = float(input("Flux thermique (en W) :"))
-            FT_deltaT = float(input("Différence de température (en °C) :"))
-            S = FT_q / FT_deltaT
+            FT_ΔT = float(input("Différence de température (en °C) :"))
+            S = FT_q / FT_ΔT
             print("La surface d'échange thermique S = {:.2f} m²".format(S))
         elif flux_thermique == 3:
             FT_S = float(input("Surface d'échange thermique (en m²) :"))
             FT_q = float(input("Flux thermique(en W):"))
+            FT_ΔT = float(input("Différence de température (en °C) :"))
+            ΔT = FT_q / FT_S
+            print("La différence de température ΔT = {:.2f} °C".format(ΔT))
+        else:
+            print("Choix invalide. Veuillez réessayer.")
+    elif thermodynamique == 3:
+        print("Quelle variable cherchez-vous ?")
+        print("1. Cp (en J/kg.K)")
+        print("2. m (en kg)")
+        print("3. ΔT (en °C)")
+        chaleur = float(input("Indiquez votre choix :"))
+        if chaleur == 1:
+            CH_m = float(input("Masse de l'échantillon (en kg) :"))
+            CH_ΔT = float(input("Différence de température (en °C) :"))
+            CH_q = float(input("Énergie échangée (en J) :"))
+            Cp = CH_q / (CH_m * CH_ΔT)
+            print("La capacité thermique massique Cp = {:.2f} J/kg.K".format(Cp))
+        elif chaleur == 2:
+            CH_Cp = float(input("Capacité thermique massique (en J/kg.K) :"))
+            CH_ΔT = float(input("Différence de température (en °C) :"))
+            CH_q = float(input("Énergie échangée (en J) :"))
+            m = CH_q / (CH_Cp * CH_ΔT)
+            print("La masse de l'échantillon m = {:.2f} kg".format(m))
+        elif chaleur == 3:
+            CH_Cp = float(input("Capacité thermique massique (en J/kg.K) :"))
+            CH_m = float(input("Masse de l'échantillon (en kg) :"))
+            CH_q = float(input("Énergie échangée (en J) :"))
+            ΔT = CH_q / (CH_m * CH_Cp)
+            print("La différence de température ΔT = {:.2f} °C".format(ΔT))
+        else:
+            print("Choix invalide. Veuillez réessayer.")
