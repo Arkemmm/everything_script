@@ -39,7 +39,7 @@ Arbre des menus et sous-menus :
 ---
 
 
-Everything, ce nom si évocateur,  
+Everything, par ce nom si évocateur,  
 Rend accessible les maths et la physique,  
 Le code Python agit comme un moteur,  
 Pour des calculs précis, simples et pratiques.  
