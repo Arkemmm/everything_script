@@ -57,5 +57,55 @@ if groupe == 1:
             EP_energie= float(input("Energie potentielle de l'objet :"))
             masse = EP_energie / (EP_gravite * EP_hauteur)
             print("La masse de lo'bjet est de {:.2f} kg".format(masse))
+    elif energie == 3:
+        print("Quelle variable cherchez-vous ?")
+        print("1. E (en Joule)")
+        print("2. Débit (en m³/s)")
+        print("3. Hauteur (en m)")
+        energie_hydrolique = float(input("Indiquez votre choix :"))
+        if energie_hydrolique == 1:
+            EH_debit= float(input("Débit de l'objet :"))
+            EH_hauteur= float(input("Hauteur de l'objet :"))
+            EH_poids_specifique= float(input("Poids spécifique du fluide :"))
+            EH_energie = EH_debit * EH_hauteur * EH_poids_specifique
+            print("L'énergie hydraulique E = {:.2f} J".format(EH_energie))
+        elif energie_hydrolique == 2:
+            EH_hauteur= float(input("Hauteur de l'objet :"))
+            EH_poids_specifique= float(input("Poids spécifique du fluide :"))
+            EH_energie= float(input("Energie hydraulique de l'objet :"))
+            debit = EH_energie / (EH_hauteur * EH_poids_specifique)
+            print("Le débit de l'objet est de {:.2f} m³/s".format(debit))
+        elif energie_hydrolique == 3:
+            EH_debit= float(input("Débit de l'objet :"))
+            EH_poids_specifique= float(input("Poids spécifique du fluide :"))
+            EH_energie= float(input("Energie hydraulique de l'objet :"))
+            hauteur = EH_energie / (EH_debit * EH_poids_specifique)
+            print("La hauteur de l'objet est de {:.2f} m".format(hauteur))
+
+    elif energie == 4:
+        print("Quelle variable cherchez-vous ?")
+        print("1. E (en Joule)")
+        print("2. Surface (en m²)")
+        print("3. Rendement (en %)")
+        energie_photovoltaique = float(input("Indiquez votre choix :"))
+        if energie_photovoltaique == 1:
+            EPV_surface= float(input("Surface du panneau :"))
+            EPV_rendement= float(input("Rendement du panneau :"))
+            EPV_flux_solaire= float(input("Flux solaire incident :"))
+            Epv = EPV_surface * EPV_rendement * EPV_flux_solaire
+            print("L'énergie photovoltaïque E = {:.2f} J".format(Epv))
+
+        elif energie_photovoltaique == 2:
+            EPV_rendement= float(input("Rendement du panneau :"))
+            EPV_flux_solaire= float(input("Flux solaire incident :"))
+            EPV_energie= float(input("Energie photovoltaïque de l'objet :"))
+            surface = EPV_energie / (EPV_rendement * EPV_flux_solaire)
+            print("La surface du panneau est de {:.2f} m²".format(surface))
+
+        elif energie_photovoltaique == 3:
+            EPV_surface= float(input("Surface du panneau :"))
+            EPV_flux_solaire= float(input("Flux solaire incident :"))
+            EPV_energie= float(input("Energie photovoltaïque de l'objet
+
 
 
