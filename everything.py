@@ -115,7 +115,8 @@ if groupe == 1:
             EPV_rendement = float(input("Rendement du panneau :"))
             EPV_energie = float(input("Energie photovoltaïque de l'objet :"))
             flux_solaire = EPV_energie / (EPV_surface * EPV_rendement)
-            print("Le flux solaire incident est de {:.2f} W/m²".format(flux_solaire))
+            print(
+                "Le flux solaire incident est de {:.2f} W/m²".format(flux_solaire))
 
         else:
             print("Choix non valide")
@@ -124,6 +125,50 @@ if groupe == 1:
 if groupe == 2:
     print("1. Résistance thermique")
     print("2. Flux thermique")
-    print("3. ")
-    print("4. ")
-    print("5. ")
+    print("3. Echange thermique")
+    print("4. Changement d'état")
+    thermodynamique = float(input("Indiquez votre choix :"))
+    if thermodynamique == 1:
+        print("Quelle variable cherchez-vous ?")
+        print("1. R (en K/W)")
+        print("2. dT (en °C)")
+        print("3. P (en W)")
+    resistance_thermique = float(input("Indiquez votre choix :"))
+    if resistance_thermique == 1:
+        RT_temperature1 = float(input("Température de la source chaude (en °C) :"))
+        RT_temperature2 = float(input("Température de la source froide (en °C) :"))
+        RT_flux_thermique = float(input("Flux thermique (en W) :"))
+        Rth = (RT_temperature1 - RT_temperature2) / RT_flux_thermique
+        print("La résistance thermique R = {:.2f} K/W".format(Rth))
+    elif resistance_thermique == 2:
+        RT_temperature1 = float(input("Température de la source chaude (en °C) :"))
+        RT_temperature2 = float(input("Température de la source froide (en °C) :"))
+        RT_puissance = float(input("Puissance échangée (en W) :"))
+        dT = RT_temperature1 - RT_temperature2
+        Rth = dT / RT_puissance
+        print("La résistance thermique R = {:.2f} K/W".format(Rth))
+    elif resistance_thermique == 3:
+        RT_temperature1 = float(input("Température de la source chaude (en °C) :"))
+        RT_temperature2 = float(input("Température de la source froide (en °C) :"))
+        RT_flux_thermique = float(input("Flux thermique (en W) :"))
+        P = RT_flux_thermique * (RT_temperature1 - RT_temperature2)
+        print("La puissance échangée P = {:.2f} W".format(P))
+    elif thermodynamique == 2:
+        print("Quelle variable cherchez-vous ?")
+        print("1. q (en W)")
+        print("2. S (en m²)")
+        print("3. deltaT (en °C)")
+        flux_thermique = float(input("Indiquez votre choix :"))
+        if flux_thermique == 1:
+            FT_S = float(input("Surface d'échange thermique (en m²) :"))
+            FT_deltaT = float(input("Différence de température (en °C) :"))
+            q = FT_S * FT_deltaT
+            print("Le flux thermique q = {:.2f} W".format(q))
+        elif flux_thermique == 2:
+            FT_q = float(input("Flux thermique (en W) :"))
+            FT_deltaT = float(input("Différence de température (en °C) :"))
+            S = FT_q / FT_deltaT
+            print("La surface d'échange thermique S = {:.2f} m²".format(S))
+        elif flux_thermique == 3:
+            FT_S = float(input("Surface d'échange thermique (en m²) :"))
+            FT_q = float(input("Flux thermique(en W):"))
