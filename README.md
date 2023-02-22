@@ -49,7 +49,8 @@ Le script Everything est un guide précieux,
 
 Les lois de la nature sont à portée de main,  
 Grâce à cet outil puissant, qui ne connaît point de frein,  
-Des équations les plus simples aux plus complexes.  
+Des équations les plus simples aux plus complexes,  
+Aucune ne peux contest'.  
 
 *Everything, by ChatGPT*
 
