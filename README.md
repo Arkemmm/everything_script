@@ -16,11 +16,11 @@ Arbre des menus et sous-menus :
 │   ├── Flux thermique  
 │   ├── Echange thermique  
 │   └── Changement d'état  
-├── **Mécanique**  
-│   ├── Force  
-│   ├── Travail  
-│   ├── Couple    
-│   └── Vitesse rotation vers translation
+├── **Mécanique**   
+│   ├── Force   
+│   ├── Travail   
+│   ├── Couple     
+│   └── Vitesse rotation vers translation  
 ├── **Courrants et signaux**  
 │   ├──   
 │   ├──   
