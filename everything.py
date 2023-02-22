@@ -265,47 +265,48 @@ elif groupe == 3:
             d = W / F * cosinus
             print("La distance parcourue par l'objet est de {:.2f} m".format(d))
     elif mecanique == 3:
-            print("Quelle variable cherchez-vous ?")
-            print("1. P (en W)")
-            print("2. C (en Nm)")
-            print("3. Ꞷ (en rad/s)")
-            puissance_couple = float(input("Indiquez votre choix :"))
-            if puissance_couple == 1:
-                C = float(input("Couple (en Nm):"))
-                omega = float(input("Rotation (en rad/s) :"))
-                P = C * omega
-                print("La puissance P = {:.2f} W".format(P))
-            elif puissance_couple == 2:
-                P = float(input("Puissance (en W) :"))
-                omega = float(input("Rotation (en rad/s) :"))
-                C = P/omega
-                print("Le couple est de  {:.2f} Nm")
-            elif puissance_couple == 3:
-                P = float(input("Puissance (en W) :"))
-                C = float(input("Couple (en Nm):"))
-                omega = P/C
-                omega_tr = (omega*2*pi)/60
-                print("La rotation est de {:.2f} rad/s".format(omega))
-                print("La rotation est de {:.2f} tr/min".format(omega_tr))
-
+        print("Quelle variable cherchez-vous ?")
+        print("1. P (en W)")
+        print("2. C (en Nm)")
+        print("3. Ꞷ (en rad/s)")
+        puissance_couple = float(input("Indiquez votre choix :"))
+        if puissance_couple == 1:
+            C = float(input("Couple (en Nm):"))
+            omega = float(input("Rotation (en rad/s) :"))
+            P = C * omega
+            print("La puissance P = {:.2f} W".format(P))
+        elif puissance_couple == 2:
+            P = float(input("Puissance (en W) :"))
+            omega = float(input("Rotation (en rad/s) :"))
+            C = P/omega
+            print("Le couple est de  {:.2f} Nm")
+        elif puissance_couple == 3:
+            P = float(input("Puissance (en W) :"))
+            C = float(input("Couple (en Nm):"))
+            omega = P/C
+            omega_tr = (omega*2*pi)/60
+            print("La rotation est de {:.2f} rad/s".format(omega))
+            print("La rotation est de {:.2f} tr/min".format(omega_tr))
     elif mecanique == 4:
         print("Quelle variable cherchez-vous ?")
-        print("1. vitesse (en m/s)")
-        print("2. temps (en s)")
-        print("3. distance (en m)")
-        mouvement_uniforme = float(input("Indiquez votre choix :"))
-        if mouvement_uniforme == 1:
-            d = float(input("Distance parcourue par l'objet :"))
-            t = float(input("Temps mis pour parcourir la distance :"))
-            v = d / t
-            print("La vitesse de l'objet est de {:.2f} m/s".format(v))
-        elif mouvement_uniforme == 2:
-            d = float(input("Distance parcourue par l'objet :"))
-            v = float(input("Vitesse de l'objet :"))
-            t = d / v
-            print("Le temps mis par l'objet pour parcourir la distance est de {:.2f} s".format(t))
-        elif mouvement_uniforme == 3:
-            v = float(input("Vitesse de l'objet :"))
-            t = float(input("Temps mis par l'objet pour parcourir la distance :"))
-            d = v * t
-            print("La distance parcourue par l'objet est de {:.2f} m".format(d))
+        print("1. Vitesse de translation (en m/s)")
+        print("2. Vitesse de rotation (en tr/min)")
+        print("3. Diamètre (en m)")
+        vitesse = float(input("Indiquez votre choix :"))
+        if vitesse == 1:
+            n = float(input("Rotation en tr/min :"))
+            d = float(input("Diamètre de la roue :"))
+            v = (pi*d*n)/60
+            print("La vitesse de translation est de {:.2f} m/s".format(v))
+        elif vitesse == 2:
+            v = float(input("Vitesse de translation :"))
+            d = float(input("Diamètre de la roue :"))
+            n = (60*v)/(pi*d)
+            n_rad = (n*2*pi)/60
+            print("La rotation est de {:.2f} rad/s".format(n_rad))
+            print("La rotation est de {:.2f} tr/min".format(n))
+        elif vitesse == 3:
+            n = float(input("Rotation en tr/min :"))
+            v = float(input("Vitesse de translation :"))
+            d = (60*v)/(pi*n)
+            print("Le diamètre de la roue est de {:.2f} m".format(d))

@@ -20,7 +20,7 @@ Arbre des menus et sous-menus :
 │   ├── Force  
 │   ├── Travail  
 │   ├── Couple    
-│   └──   
+│   └── Vitesse rotation vers translation
 ├── **Courrants et signaux**  
 │   ├──   
 │   ├──   
