@@ -9,9 +9,9 @@ Arbre des menus et sous-menus :
 .  
 ├── **Calcul d'énergie**  
 │   ├── Energie cinétique  
-│   ├── Energie potientiel de peseanteur 
-│   ├── Puissance hydraulique  
-│   ├── Energie hydraulique  
+│   ├── Energie potientiel de peseanteur  
+│   ├── Puissance hydraulique   
+│   ├── Energie hydraulique   
 │   └── Energie photovoltaïque  
 ├── **Thermodynamique**  
 │   ├── Résistance thermique surfacique  
