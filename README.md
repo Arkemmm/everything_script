@@ -17,9 +17,9 @@ Arbre des menus et sous-menus :
 │   ├── Echange thermique  
 │   └── Changement d'état  
 ├── **Mécanique**  
-│   ├── Force
-│   ├── Travail
-│   ├── Couple  
+│   ├── Force  
+│   ├── Travail  
+│   ├── Couple    
 │   └──   
 ├── **Courrants et signaux**  
 │   ├──   
