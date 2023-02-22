@@ -40,7 +40,7 @@ Arbre des menus et sous-menus :
 
 
 Everything, par ce nom si évocateur,  
-Rend accessible les maths et la physique,  
+Rend accessible les mathématiques et la physique,  
 Le code Python agit comme un moteur,  
 Pour des calculs précis, simples et pratiques.  
 
@@ -48,9 +48,9 @@ Dans cet univers infini et mystérieux,
 Le script Everything est un guide précieux,  
 
 Les lois de la nature sont à portée de main,  
-Grâce à cet outil puissant, qui ne connaît point de frein,  
+Grâce à cet outil puissant, qui ne connaît pas de frein,  
 Des équations les plus simples aux plus complexes,  
-Aucune ne peux contest'.  
+Aucune ne peut contest'.  
 
 *Everything, by ChatGPT*
 
