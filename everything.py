@@ -1,3 +1,4 @@
+import math
 # Affichage des formules
 print("Groupe de relations")
 print("1. Calculs d'énergie")
@@ -151,7 +152,8 @@ if groupe == 2:
             epaisseur = float(input("Epaisseur (en mètre) :"))
             surface = float(input("Surface (en m²) :"))
             conductivité = (epaisseur*surface)/Rths
-            print("La conductivité thermique ' = {:.2f} W/mK".format(conductivité))
+            print(
+                "La conductivité thermique ' = {:.2f} W/mK".format(conductivité))
     elif thermodynamique == 2:
         print("Quelle variable cherchez-vous ?")
         print("1. Q (en W)")
@@ -202,3 +204,103 @@ if groupe == 2:
             print("La différence de température ΔT = {:.2f} °C".format(ΔT))
         else:
             print("Choix invalide. Veuillez réessayer.")
+elif groupe == 3:
+    print("1. Force")
+    print("2. Travail")
+    print("3. Puissance")
+    print("4. Vitesse instantanée")
+    mecanique = float(input("Indiquez votre choix :"))
+    if mecanique == 1:
+        print("Quelle variable cherchez-vous ?")
+        print("1. F (en N)")
+        print("2. m (en kg)")
+        print("3. a (en m/s²)")
+        force = float(input("Indiquez votre choix :"))
+        if force == 1:
+            m = float(input("Masse de l'objet :"))
+            a = float(input("Accélération de l'objet :"))
+            F = m * a
+            print("La force F = {:.2f} N".format(F))
+        elif force == 2:
+            F = float(input("Force appliquée sur l'objet :"))
+            a = float(input("Accélération de l'objet :"))
+            m = F / a
+            print("La masse de l'objet est de {:.2f} kg".format(m))
+        elif force == 3:
+            F = float(input("Force appliquée sur l'objet :"))
+            m = float(input("Masse de l'objet :"))
+            a = F / m
+            print("L'accélération de l'objet est de {:.2f} m/s²".format(a))
+    elif mecanique == 2:
+        print("Quelle variable cherchez-vous ?")
+        print("1. W (en J)")
+        print("2. F (en N)")
+        print("3. d (en m)")
+        print("4. α (en degrés)")
+        travail = float(input("Indiquez votre choix :"))
+        if travail == 1:
+            F = float(input("Force appliquée sur l'objet :"))
+            d = float(input("Distance parcourue par l'objet :"))
+            alpha_angle = float(input("Angle α (en degrés) :"))
+            angle_en_rad = math.radians(alpha_angle)
+            cosinus = math.cos(angle_en_rad)
+            W = F * d * cosinus
+            print("Le travail W = {:.2f} J".format(W))
+        elif travail == 2:
+            W = float(input("Travail effectué sur l'objet :"))
+            d = float(input("Distance parcourue par l'objet :"))
+            alpha_angle = float(input("Angle α (en degrés) :"))
+            angle_en_rad = math.radians(alpha_angle)
+            cosinus = math.cos(angle_en_rad)
+            F = W / d * cosinus
+            print("La force appliquée sur l'objet est de {:.2f} N".format(F))
+        elif travail == 3:
+            W = float(input("Travail effectué sur l'objet :"))
+            F = float(input("Force appliquée sur l'objet :"))
+            alpha_angle = float(input("Angle α (en degrés) :"))
+            angle_en_rad = math.radians(alpha_angle)
+            cosinus = math.cos(angle_en_rad)
+            d = W / F * cosinus
+            print("La distance parcourue par l'objet est de {:.2f} m".format(d))
+    elif mecanique == 3:
+            print("Quelle variable cherchez-vous ?")
+            print("1. P (en W)")
+            print("2. W (en J)")
+            print("3. t (en s)")
+            puissance = float(input("Indiquez votre choix :"))
+            if puissance == 1:
+                W = float(input("Travail effectué sur l'objet :"))
+                t = float(input("Temps nécessaire pour effectuer le travail :"))
+                P = W / t
+                print("La puissance P = {:.2f} W".format(P))
+            elif puissance == 2:
+                P = float(input("Puissance de l'objet :"))
+                t = float(input("Temps nécessaire pour effectuer le travail :"))
+                W = P * t
+                print("Le travail effectué sur l'objet est de {:.2f} J")
+            elif puissance == 3:
+                P = float(input("Puissance de l'objet :"))
+                W = float(input("Travail effectué sur l'objet :"))
+                t = W / P
+                print("Le temps nécessaire pour effectuer le travail est de {:.2f} s".format(t))
+    elif mecanique == 4:
+        print("Quelle variable cherchez-vous ?")
+        print("1. vitesse (en m/s)")
+        print("2. temps (en s)")
+        print("3. distance (en m)")
+        mouvement_uniforme = float(input("Indiquez votre choix :"))
+        if mouvement_uniforme == 1:
+            d = float(input("Distance parcourue par l'objet :"))
+            t = float(input("Temps mis pour parcourir la distance :"))
+            v = d / t
+            print("La vitesse de l'objet est de {:.2f} m/s".format(v))
+        elif mouvement_uniforme == 2:
+            d = float(input("Distance parcourue par l'objet :"))
+            v = float(input("Vitesse de l'objet :"))
+            t = d / v
+            print("Le temps mis par l'objet pour parcourir la distance est de {:.2f} s".format(t))
+        elif mouvement_uniforme == 3:
+            v = float(input("Vitesse de l'objet :"))
+            t = float(input("Temps mis par l'objet pour parcourir la distance :"))
+            d = v * t
+            print("La distance parcourue par l'objet est de {:.2f} m".format(d))
