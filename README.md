@@ -51,4 +51,4 @@ Des équations les plus simples aux plus complexes.
 
 Ce fichier est soumis aux droits d'auteur et est la propriété intellectuelle de Arkemmm.
 Toute copie, reproduction ou distribution non autorisée de ce fichier est strictement interdite.
-Si vous ausez le télécharger, je veux bien 2€ pour me payer une PastaBox Carbo.
+Si vous osez le télécharger, je veux bien 2€ pour me payer une PastaBox Carbo.
