@@ -146,6 +146,12 @@ if groupe == 2:
             surface = float(input("Surface (en m²) :"))
             epaisseur = (Rths*conductivité)/surface
             print("L'épaisseur E ' = {:.2f} m".format(epaisseur))
+        elif resistance_thermique == 3:
+            Rths = float(input("Résistance thermique (en K/W)) :"))
+            epaisseur = float(input("Epaisseur (en mètre) :"))
+            surface = float(input("Surface (en m²) :"))
+            conductivité = (epaisseur*surface)/Rths
+            print("La conductivité thermique ' = {:.2f} W/mK".format(conductivité))
     elif thermodynamique == 2:
         print("Quelle variable cherchez-vous ?")
         print("1. Q (en W)")
