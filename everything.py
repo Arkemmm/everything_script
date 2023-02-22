@@ -8,6 +8,8 @@ print("4. Courrants et signaux")
 print("5. Géométrie")
 
 groupe = float(input("Indiquez votre choix :"))
+#Variable importante
+pi = 3.14159265359
 
 if groupe == 1:
     print("1. Energie cinétique")
@@ -265,24 +267,27 @@ elif groupe == 3:
     elif mecanique == 3:
             print("Quelle variable cherchez-vous ?")
             print("1. P (en W)")
-            print("2. W (en J)")
-            print("3. t (en s)")
-            puissance = float(input("Indiquez votre choix :"))
-            if puissance == 1:
-                W = float(input("Travail effectué sur l'objet :"))
-                t = float(input("Temps nécessaire pour effectuer le travail :"))
-                P = W / t
+            print("2. C (en Nm)")
+            print("3. Ꞷ (en rad/s)")
+            puissance_couple = float(input("Indiquez votre choix :"))
+            if puissance_couple == 1:
+                C = float(input("Couple (en Nm):"))
+                omega = float(input("Rotation (en rad/s) :"))
+                P = C * omega
                 print("La puissance P = {:.2f} W".format(P))
-            elif puissance == 2:
-                P = float(input("Puissance de l'objet :"))
-                t = float(input("Temps nécessaire pour effectuer le travail :"))
-                W = P * t
-                print("Le travail effectué sur l'objet est de {:.2f} J")
-            elif puissance == 3:
-                P = float(input("Puissance de l'objet :"))
-                W = float(input("Travail effectué sur l'objet :"))
-                t = W / P
-                print("Le temps nécessaire pour effectuer le travail est de {:.2f} s".format(t))
+            elif puissance_couple == 2:
+                P = float(input("Puissance (en W) :"))
+                omega = float(input("Rotation (en rad/s) :"))
+                C = P/omega
+                print("Le couple est de  {:.2f} Nm")
+            elif puissance_couple == 3:
+                P = float(input("Puissance (en W) :"))
+                C = float(input("Couple (en Nm):"))
+                omega = P/C
+                omega_tr = (omega*2*pi)/60
+                print("La rotation est de {:.2f} rad/s".format(omega))
+                print("La rotation est de {:.2f} tr/min".format(omega_tr))
+
     elif mecanique == 4:
         print("Quelle variable cherchez-vous ?")
         print("1. vitesse (en m/s)")
