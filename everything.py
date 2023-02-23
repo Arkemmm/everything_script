@@ -1,4 +1,7 @@
 import math
+# Les constantes
+pi = 3.14159265359
+g = 9,80665
 # Affichage des formules
 print("Groupe de relations")
 print("1. Calculs d'énergie")
@@ -6,18 +9,12 @@ print("2. Thermodynamique")
 print("3. Mécanique")
 print("4. Courrants et signaux")
 print("5. Géométrie")
-
 groupe = float(input("Indiquez votre choix :"))
-# Les constantes
-pi = 3.14159265359
-g = 9,80665
-
 if groupe == 1:
     print("1. Energie cinétique")
     print("2. Energie potentiel de pesanteur")
     print("3. Puissance hydraulique")
     print("4. Energie photovoltaïque")
-
     energie = float(input("Indiquez votre choix :"))
     if energie == 1:
         print("Quelle variable cherchez-vous ?")
@@ -41,7 +38,6 @@ if groupe == 1:
             EC_energie = float(input("Energie cinétique de l'objet :"))
             vitesse = ((2 * EC_energie) / EC_masse) ** 0.5
             print("La vitesse de l'objet est de {:.2f} m/s".format(vitesse))
-
     elif energie == 2:
         print("Quelle variable cherchez-vous ?")
         print("1. E (en Joule)")
@@ -54,7 +50,6 @@ if groupe == 1:
             EP_gravite = float(input("Valeur de la gravité :"))
             Epot = EP_masse * EP_gravite * EP_hauteur
             print("L'énergie potentielle Ep = {:.2f} J".format(Epot))
-
         elif energie_potentielle == 2:
             EP_hauteur = float(input("Hauteur de l'objet :"))
             EP_gravite = float(input("Valeur de la gravité :"))
@@ -97,29 +92,24 @@ if groupe == 1:
             EPV_flux_solaire = float(input("Flux solaire incident :"))
             Epv = EPV_surface * EPV_rendement * EPV_flux_solaire
             print("L'énergie photovoltaïque E = {:.2f} J".format(Epv))
-
         elif energie_photovoltaique == 2:
             EPV_rendement = float(input("Rendement du panneau :"))
             EPV_flux_solaire = float(input("Flux solaire incident :"))
             EPV_energie = float(input("Energie photovoltaïque de l'objet :"))
             surface = EPV_energie / (EPV_rendement * EPV_flux_solaire)
             print("La surface du panneau est de {:.2f} m²".format(surface))
-
         elif energie_photovoltaique == 3:
             EPV_surface = float(input("Surface du panneau :"))
             EPV_flux_solaire = float(input("Flux solaire incident :"))
             EPV_energie = float(input("Energie photovoltaïque de l'objet :"))
             rendement = EPV_energie / (EPV_surface * EPV_flux_solaire) * 100
             print("Le rendement du panneau est de {:.2f} %".format(rendement))
-
         elif energie_photovoltaique == 4:
             EPV_surface = float(input("Surface du panneau :"))
             EPV_rendement = float(input("Rendement du panneau :"))
             EPV_energie = float(input("Energie photovoltaïque de l'objet :"))
             flux_solaire = EPV_energie / (EPV_surface * EPV_rendement)
-            print(
-                "Le flux solaire incident est de {:.2f} W/m²".format(flux_solaire))
-
+            print("Le flux solaire incident est de {:.2f} W/m²".format(flux_solaire))
         else:
             print("Choix non valide")
     else:
@@ -153,8 +143,7 @@ if groupe == 2:
             epaisseur = float(input("Epaisseur (en mètre) :"))
             surface = float(input("Surface (en m²) :"))
             conductivité = (epaisseur*surface)/Rths
-            print(
-                "La conductivité thermique ' = {:.2f} W/mK".format(conductivité))
+            print("La conductivité thermique ' = {:.2f} W/mK".format(conductivité))
     elif thermodynamique == 2:
         print("Quelle variable cherchez-vous ?")
         print("1. Q (en W)")
@@ -205,6 +194,8 @@ if groupe == 2:
             print("La différence de température ΔT = {:.2f} °C".format(ΔT))
         else:
             print("Choix invalide. Veuillez réessayer.")
+    else:
+        print("Choix invalide. Veuillez réessayer.")
 elif groupe == 3:
     print("1. Force")
     print("2. Travail")
@@ -309,3 +300,139 @@ elif groupe == 3:
             v = float(input("Vitesse de translation :"))
             d = (60*v)/(pi*n)
             print("Le diamètre de la roue est de {:.2f} m".format(d))
+    else:
+        print("Choix invalide. Veuillez réessayer.")
+elif groupe == 4:
+    print("1. ")
+    print("2. ")
+    print("3. ")
+    print("4. ")
+     = float(input("Indiquez votre choix :"))
+    if   == 1:
+        print("Quelle variable cherchez-vous ?")
+        print("1. ")
+        print("2. ")
+        print("3. ")
+        print("4. ")
+        if == 1:
+            print(" {:.2f} ".format())
+        elif == 2:
+            print(" {:.2f} ".format())
+        elif  == 3:
+            print(" {:.2f} ".format())
+        elif  == 4:
+            print(" {:.2f} ".format())
+    elif   == 2:
+        print("Quelle variable cherchez-vous ?")
+        print("1. ")
+        print("2. ")
+        print("3. ")
+        print("4. ")
+          = float(input("Indiquez votre choix :"))
+        if == 1:
+            print(" {:.2f} ".format())
+        elif == 2:
+            print(" {:.2f} ".format())
+        elif  == 3:
+            print(" {:.2f} ".format())
+        elif  == 4:
+            print(" {:.2f} ".format())
+    elif  == 3:
+        print("Quelle variable cherchez-vous ?")
+        print("1. ")
+        print("2. ")
+        print("3. ")
+        print("4. ")
+         = float(input("Indiquez votre choix :"))
+        if == 1:
+            print(" {:.2f} ".format())
+        elif == 2:
+            print(" {:.2f} ".format())
+        elif  == 3:
+            print(" {:.2f} ".format())
+        elif  == 4:
+            print(" {:.2f} ".format())
+    elif  == 4:
+        print("Quelle variable cherchez-vous ?")
+        print("1. ")
+        print("2. ")
+        print("3. ")
+        print("4. ")
+         = float(input("Indiquez votre choix :"))
+        if == 1:
+            print(" {:.2f} ".format())
+        elif == 2:
+            print(" {:.2f} ".format())
+        elif  == 3:
+            print(" {:.2f} ".format())
+        elif  == 4:
+            print(" {:.2f} ".format())
+    else:
+        print("Choix invalide. Veuillez réessayer.")
+elif groupe == 5:
+    print("1. ")
+    print("2. ")
+    print("3. ")
+    print("4. ")
+     = float(input("Indiquez votre choix :"))
+    if   == 1:
+        print("Quelle variable cherchez-vous ?")
+        print("1. ")
+        print("2. ")
+        print("3. ")
+        print("4. ")
+        if == 1:
+            print(" {:.2f} ".format())
+        elif == 2:
+            print(" {:.2f} ".format())
+        elif  == 3:
+            print(" {:.2f} ".format())
+        elif  == 4:
+            print(" {:.2f} ".format())
+    elif   == 2:
+        print("Quelle variable cherchez-vous ?")
+        print("1. ")
+        print("2. ")
+        print("3. ")
+        print("4. ")
+          = float(input("Indiquez votre choix :"))
+        if == 1:
+            print(" {:.2f} ".format())
+        elif == 2:
+            print(" {:.2f} ".format())
+        elif  == 3:
+            print(" {:.2f} ".format())
+        elif  == 4:
+            print(" {:.2f} ".format())
+    elif  == 3:
+        print("Quelle variable cherchez-vous ?")
+        print("1. ")
+        print("2. ")
+        print("3. ")
+        print("4. ")
+         = float(input("Indiquez votre choix :"))
+        if == 1:
+            print(" {:.2f} ".format())
+        elif == 2:
+            print(" {:.2f} ".format())
+        elif  == 3:
+            print(" {:.2f} ".format())
+        elif  == 4:
+            print(" {:.2f} ".format())
+    elif  == 4:
+        print("Quelle variable cherchez-vous ?")
+        print("1. ")
+        print("2. ")
+        print("3. ")
+        print("4. ")
+         = float(input("Indiquez votre choix :"))
+        if == 1:
+            print(" {:.2f} ".format())
+        elif == 2:
+            print(" {:.2f} ".format())
+        elif  == 3:
+            print(" {:.2f} ".format())
+        elif  == 4:
+            print(" {:.2f} ".format())
+    else:
+        print("Choix invalide. Veuillez réessayer.")
