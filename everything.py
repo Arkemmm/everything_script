@@ -370,69 +370,41 @@ elif groupe == 4:
     else:
         print("Choix invalide. Veuillez réessayer.")
 elif groupe == 5:
-    print("1. ")
-    print("2. ")
-    print("3. ")
-    print("4. ")
-     = float(input("Indiquez votre choix :"))
-    if   == 1:
-        print("Quelle variable cherchez-vous ?")
-        print("1. ")
-        print("2. ")
-        print("3. ")
-        print("4. ")
-        if == 1:
-            print(" {:.2f} ".format())
-        elif == 2:
-            print(" {:.2f} ".format())
-        elif  == 3:
-            print(" {:.2f} ".format())
-        elif  == 4:
-            print(" {:.2f} ".format())
-    elif   == 2:
-        print("Quelle variable cherchez-vous ?")
-        print("1. ")
-        print("2. ")
-        print("3. ")
-        print("4. ")
-          = float(input("Indiquez votre choix :"))
-        if == 1:
-            print(" {:.2f} ".format())
-        elif == 2:
-            print(" {:.2f} ".format())
-        elif  == 3:
-            print(" {:.2f} ".format())
-        elif  == 4:
-            print(" {:.2f} ".format())
-    elif  == 3:
-        print("Quelle variable cherchez-vous ?")
-        print("1. ")
-        print("2. ")
-        print("3. ")
-        print("4. ")
-         = float(input("Indiquez votre choix :"))
-        if == 1:
-            print(" {:.2f} ".format())
-        elif == 2:
-            print(" {:.2f} ".format())
-        elif  == 3:
-            print(" {:.2f} ".format())
-        elif  == 4:
-            print(" {:.2f} ".format())
-    elif  == 4:
-        print("Quelle variable cherchez-vous ?")
-        print("1. ")
-        print("2. ")
-        print("3. ")
-        print("4. ")
-         = float(input("Indiquez votre choix :"))
-        if == 1:
-            print(" {:.2f} ".format())
-        elif == 2:
-            print(" {:.2f} ".format())
-        elif  == 3:
-            print(" {:.2f} ".format())
-        elif  == 4:
-            print(" {:.2f} ".format())
-    else:
-        print("Choix invalide. Veuillez réessayer.")
+    print("1. Cube")
+    print("2. Pyramide à base triangulaire")
+    print("3. Pyramide à base carrée")
+    print("4. Cylindre")
+    print("5. Cône")
+    print("6. Sphère")
+    print("7. Pyramide à base rectangulaire")
+    print("8. Prisme triangulaire")
+    geometrie = float(input("Indiquez votre choix : "))
+    if geometrie == 1:
+        print("Quelle grandeur cherchez-vous ?")
+        print("1. Aire de la base")
+        print("2. Volume")
+        choix = int(input("Indiquez votre choix : "))
+        if choix == 1:
+            c = float(input("Longueur de l'arête : "))
+            b = c * c
+            print("La surface de la base est de {:.2f} u²".format(b))
+        elif choix == 2:
+            c = float(input("Longueur de l'arête : "))
+            v = c * c * c
+            print("Le volume du cube est de {:.2f} u³".format(v))
+
+    if geometrie == 2:
+        print("Quelle grandeur cherchez-vous ?")
+        print("1. Aire de la base")
+        print("2. Volume")
+        choix = int(input("Indiquez votre choix : "))
+        if choix == 1:
+            b = float(input("Longueur de la base : "))
+            h = float(input("Hauteur de la pyramide : "))
+            aire_base = 0.5 * b * h
+            print("L'aire de la base de la pyramide est de {:.2f} u²".format(aire_base))
+        elif choix == 2:
+            b = float(input("Longueur de la base : "))
+            h = float(input("Hauteur de la pyramide : "))
+            volume = (1/3) * b * b * h
+            print("Le volume de la pyramide à base triangulaire est de {:.2f} u³".format(volume))
