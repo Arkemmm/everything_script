@@ -1,4 +1,4 @@
-# everything_script (0.2)
+# everything_script (0.3)
 **Un script en Python qui permet de TOUT calculer enfin presque !
 Si vous souhaitez que j'ajoute des formules, demandez-moi.**
 
@@ -23,7 +23,8 @@ Arbre des menus et sous-menus :
 │   ├── Force   
 │   ├── Travail   
 │   ├── Couple     
-│   └── Vitesse rotation vers translation  
+│   ├── Vitesse rotation vers translation  
+│   └── Compensation des forces    
 ├── **Courrants et signaux**  
 │   ├──   
 │   ├──   
