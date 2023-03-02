@@ -2,6 +2,7 @@ import math
 # Les constantes
 pi = 3.14159265359
 g = 9,80665
+c = 299 792 458
 # Affichage des formules
 print("Groupe de relations")
 print("1. Calculs d'énergie")
@@ -170,28 +171,55 @@ if groupe == 2:
             print("Choix invalide. Veuillez réessayer.")
     elif thermodynamique == 3:
         print("Quelle variable cherchez-vous ?")
-        print("1. Cp (en J/kg.K)")
+        print("1. E (en J)")
+        print("1. C (en J/kg.K)")
         print("2. m (en kg)")
         print("3. ΔT (en °C)")
         chaleur = float(input("Indiquez votre choix :"))
         if chaleur == 1:
+            m = float(input("Masse (en kg) :"))
+            t = float(input("Différence de température (en °C) :"))
+            c = float(input("Capacité thermique massique (en J/kg.K) :"))
+            E = m*c*t
+            print("L'énergie échangé est de '= {:.2f} J".format(E))
+        if chaleur == 2:
             CH_m = float(input("Masse de l'échantillon (en kg) :"))
             CH_ΔT = float(input("Différence de température (en °C) :"))
             CH_q = float(input("Énergie échangée (en J) :"))
             Cp = CH_q / (CH_m * CH_ΔT)
             print("La capacité thermique massique Cp = {:.2f} J/kg.K".format(Cp))
-        elif chaleur == 2:
+        elif chaleur == 3:
             CH_Cp = float(input("Capacité thermique massique (en J/kg.K) :"))
             CH_ΔT = float(input("Différence de température (en °C) :"))
             CH_q = float(input("Énergie échangée (en J) :"))
             m = CH_q / (CH_Cp * CH_ΔT)
             print("La masse de l'échantillon m = {:.2f} kg".format(m))
-        elif chaleur == 3:
+        elif chaleur == 4:
             CH_Cp = float(input("Capacité thermique massique (en J/kg.K) :"))
             CH_m = float(input("Masse de l'échantillon (en kg) :"))
-            CH_q = float(input("Énergie échangée (en J) :"))
+            E = float(input("Énergie échangée (en J) :"))
             ΔT = CH_q / (CH_m * CH_Cp)
             print("La différence de température ΔT = {:.2f} °C".format(ΔT))
+    elif thermodynamique == 4:
+        print("Quelle variable cherchez-vous ?")
+        print("1. L (en J/kg)")
+        print("2. m (en kg)")
+        etat = float(input("Indiquez votre choix :"))
+        if etat == 1:
+            m = float(input("Masse de l'échantillon (en kg) :"))
+            l = float(input("Energie massique de \n changement d'état (en J/kg) :"))
+            E = m*l
+            print("L'energie échangé est de ' = {:.2f} J".format(E))
+        elif etat == 2:
+            l = float(input("Energie massique de \n changement d'état (en J/kg) :"))
+            E = float(input("Énergie échangée (en J) :"))
+            m = E/l
+            print("La masse est de m = {:.2f} kg".format(m))
+        elif etat == 3:
+            E = float(input("Énergie échangée (en J) :"))
+            m = float(input("Masse de l'échantillon (en kg) :"))
+            l = E/m
+            print("L’énergie massique de \n changement d’état est de = {:.2f} J/kg".format(l))
         else:
             print("Choix invalide. Veuillez réessayer.")
     else:
@@ -201,6 +229,7 @@ elif groupe == 3:
     print("2. Travail")
     print("3. Puissance")
     print("4. Vitesse instantanée")
+    print("5. Compensation des force")
     mecanique = float(input("Indiquez votre choix :"))
     if mecanique == 1:
         print("Quelle variable cherchez-vous ?")
@@ -300,6 +329,33 @@ elif groupe == 3:
             v = float(input("Vitesse de translation :"))
             d = (60*v)/(pi*n)
             print("Le diamètre de la roue est de {:.2f} m".format(d))
+    elif mecanique == 5:
+        print("Quelle variable cherchez-vous ?")
+        print("1. m (en kg)")
+        print("2. v (en m/s)")
+        print("3. S (en m²)")
+        frottement = float(input("Indiquez votre choix :"))
+        if frottement == 1:
+            cx =float(input("Coéficient de trainée :"))
+            p =float(input("Masse volumique du fluide (kg/m³) :"))
+            s =float(input("Surface de référence (en m²) :"))
+            v =float(input("Vitesse (em m/s) :"))
+            m = (0.5*p*cx*s*(v**2))/g        
+            print("La masse de l'objet est {:.2f} kg \n pour que les forces se compensent.".format(m))
+        elif frottement == 2:
+            cx =float(input("Coéficient de trainée :"))
+            p = float(input("Masse volumique du fluide (kg/m³) :"))
+            m = float(input("Masse (en kg) :"))
+            s =float(input("Surface de référence (en m²) :"))
+            v = math.sqrt((2*m*g)/p*cx*s)
+            print("La vitesse est {:.2f} m/s \n lorsque les forces se compensent.".format(v))
+        elif frottement == 3:
+            cx =float(input("Coéficient de trainée :"))
+            p = float(input("Masse volumique du fluide (kg/m³) :"))
+            m = float(input("Masse (en kg) :"))
+            v = float(input("Vitesse (em m/s) :"))
+            s = (2*m*g)/(p*cx*(v**2))
+            print("La surface est {:.2f} m/s \n pour que les forces se compensent.".format(s))
     else:
         print("Choix invalide. Veuillez réessayer.")
 elif groupe == 4:
