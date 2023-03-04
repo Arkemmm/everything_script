@@ -1,8 +1,8 @@
-# everything_script (0.3)  
+# everything_script (0.4)  
 
 ## Comment l'utiliser ?  
 **1. Copier l'entièreté du code Python**  
-**2. Rendez vous sur https://my.numworks.com/python/alex-arkem/everything avec le navigateur Chrome**  
+**2. Rendez vous sur https://my.numworks.com/ avec le navigateur Chrome**  
 **3. Connectez-vous puis cliquez sur votre nom en haut à droite, ensuite allez dans 'Mes Script'**  
 **4. Cliquez sur 'Nouveau script' et donnez lui un nom puis coller le code Python**    
 **5. Branchez votre Numworks et cliquez sur 'Envoyer sur ma calculatrice'**  
@@ -39,15 +39,19 @@
 │   ├── Vitesse rotation vers translation  
 │   └── Compensation des forces    
 ├── **Courrants et signaux**  
-│   ├──   
-│   ├──   
+│   ├── Résistance équivalente  
+│   ├── Puissance apparente    
 │   ├──   
 │   └──   
 └── **Géométrie**  
-    ├──   
-    ├──   
-    ├──   
-    └──   
+    ├── Cube  
+    ├── Pyramide à base triangulaire    
+    ├── Pyramide à base carrée 
+    ├── Cylindre
+    ├── Cône
+    ├── Sphère
+    ├── Pyramide à base rectangulaire
+    └── Prisme triangulaire 
 
 
 ---
