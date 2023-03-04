@@ -45,13 +45,13 @@
 │   └──   
 └── **Géométrie**  
     ├── Cube  
-    ├── Pyramide à base triangulaire    
-    ├── Pyramide à base carrée 
-    ├── Cylindre
-    ├── Cône
-    ├── Sphère
-    ├── Pyramide à base rectangulaire
-    └── Prisme triangulaire 
+    ├── Pyramide à base triangulaire     
+    ├── Pyramide à base carrée   
+    ├── Cylindre  
+    ├── Cône  
+    ├── Sphère  
+    ├── Pyramide à base rectangulaire  
+    └── Prisme triangulaire  
 
 
 ---
