@@ -4,17 +4,19 @@
 **1. Copier l'entièreté du code Python**  
 **2. Rendez vous sur https://my.numworks.com/python/alex-arkem/everything avec le navigateur Chrome**  
 **3. Connectez-vous puis cliquez sur votre nom en haut à droite, ensuite allez dans 'Mes Script'**  
-**4. Cliquez sur 'Nouveau script' et donnez lui un nom puis coller le code Python**  
-**5. Branchez votre Numworks et cliquez sur 'Envoyer sur ma calculatrice'**
+**4. Cliquez sur 'Nouveau script' et donnez lui un nom puis coller le code Python**    
+**5. Branchez votre Numworks et cliquez sur 'Envoyer sur ma calculatrice'**  
 
 **Note : Veuillez définir la police Python sur petite pour voir l'entièreté du code, suivez ceci si vous ne savez pas comment faire :**  
 **Rendez vous dans les paramètres puis :**  
 
-! 1.https://github.com/Arkemmm/everything_script/blob/7981bc4e0dd0cc3e8f2848e86073d385fcf7073e/numworks.png
+! 1.https://github.com/Arkemmm/everything_script/blob/7981bc4e0dd0cc3e8f2848e86073d385fcf7073e/numworks.png  
 
-! 2. https://github.com/Arkemmm/everything_script/blob/70c80e056c658410b283ca05a3bb7ec6ca4c5ea1/numworks_2.png
+! 2. https://github.com/Arkemmm/everything_script/blob/70c80e056c658410b283ca05a3bb7ec6ca4c5ea1/numworks_2.png  
 
-Arbre des menus et sous-menus :  
+
+
+## Arbre des menus et sous-menus :  
 
 .  
 ├── **Calcul d'énergie**  
