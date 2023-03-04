@@ -2,7 +2,7 @@ import math
 # Les constantes
 pi = 3.14159265359
 g = 9,80665
-c = 299 792 458
+c = 299792458
 # Affichage des formules
 print("Groupe de relations")
 print("1. Calculs d'énergie")
@@ -342,14 +342,14 @@ elif groupe == 3:
             s =float(input("Surface de référence (en m²) :"))
             v =float(input("Vitesse (em m/s) :"))
             m = (0.5*p*cx*s*(v**2))/g        
-            print("La masse de l'objet est {:.2f} kg \n pour que les forces se compensent.".format(m))
+            print("\n La masse de l'objet est {:.2f} kg \n pour que les forces se compensent.".format(m))
         elif frottement == 2:
             cx =float(input("Coéficient de trainée :"))
             p = float(input("Masse volumique du fluide (kg/m³) :"))
             m = float(input("Masse (en kg) :"))
             s =float(input("Surface de référence (en m²) :"))
             v = math.sqrt((2*m*g)/p*cx*s)
-            print("La vitesse est {:.2f} m/s \n lorsque les forces se compensent.".format(v))
+            print("\n La vitesse est {:.2f} m/s \n lorsque les forces se compensent.".format(v))
         elif frottement == 3:
             cx =float(input("Coéficient de trainée :"))
             p = float(input("Masse volumique du fluide (kg/m³) :"))
@@ -360,41 +360,49 @@ elif groupe == 3:
     else:
         print("Choix invalide. Veuillez réessayer.")
 elif groupe == 4:
-    print("1. ")
-    print("2. ")
+    print("1. Résistance équivalente")
+    print("2. Puissance apparente")
     print("3. ")
     print("4. ")
-     = float(input("Indiquez votre choix :"))
-    if   == 1:
+    elec = int(input("Indiquez votre choix :"))
+    if elec == 1:
+        print("\n Quelle configuration cherchez-vous ?")
+        print("1. En dérivation")
+        print("2. En série")
+        resistance = int(input("Indiquez votre choix :"))
+        if resistance == 1:
+            R1 = int(input("Valeur de R1 (en ohm): "))
+            R2 = int(input("Valeur de R2 (en ohm): "))
+            Re = (R1*R2)/(R1 + R2)
+            print("\n La résistance équivalent vaut {:.2f} ohm.".format(Re))
+        elif resistance == 2:
+            R1 = int(input("Valeur de R1 (en ohm): "))
+            R2 = int(input("Valeur de R2 (en ohm): "))
+            Re = R1 + R2
+            print("\n La résistance équivalent vaut {:.2f} ohm.".format(Re))
+    elif elec == 2:
         print("\n Quelle variable cherchez-vous ?")
-        print("1. ")
-        print("2. ")
-        print("3. ")
-        print("4. ")
+        print("1. Calcul de Ueff")
+        print("2. Calcul de Ieff")
+        print("3. Calcul de S")
+        apparente = int(input("Indiquez votre choix :"))
         if == 1:
-            print(" {:.2f} ".format())
+            u = float(input("Umax (en V) :"))
+            ueff = u/(math.sqrt(2))
+            print("La valeur de Ueff est de {:.2f} V".format(ueff))
         elif == 2:
-            print(" {:.2f} ".format())
+            i = float(input("Imax (en A) :"))
+            ieff = i/(math.sqrt(2))
+            print("La valeur de Ieff est de {:.2f} A".format(ieff))
         elif  == 3:
+            i = float(input("Ieff (en A) :"))
+            u = float(input("Ueff (en V) :"))
+            s = i*u
+            print("La valeur de la puissance aparante est {:.2f} W".format(s))
             print(" {:.2f} ".format())
         elif  == 4:
             print(" {:.2f} ".format())
-    elif   == 2:
-        print("\n Quelle variable cherchez-vous ?")
-        print("1. ")
-        print("2. ")
-        print("3. ")
-        print("4. ")
-          = float(input("Indiquez votre choix :"))
-        if == 1:
-            print(" {:.2f} ".format())
-        elif == 2:
-            print(" {:.2f} ".format())
-        elif  == 3:
-            print(" {:.2f} ".format())
-        elif  == 4:
-            print(" {:.2f} ".format())
-    elif  == 3:
+    elif elec == 3:
         print("\n Quelle variable cherchez-vous ?")
         print("1. ")
         print("2. ")
@@ -409,7 +417,7 @@ elif groupe == 4:
             print(" {:.2f} ".format())
         elif  == 4:
             print(" {:.2f} ".format())
-    elif  == 4:
+    elif elec == 4:
         print("\n Quelle variable cherchez-vous ?")
         print("1. ")
         print("2. ")
