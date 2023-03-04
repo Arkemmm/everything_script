@@ -417,6 +417,8 @@ elif groupe == 4:
             print(" {:.2f} ".format())
         elif  == 4:
             print(" {:.2f} ".format())
+        else:
+            print("Choix invalide. Veuillez relancer le script.")
     elif elec == 4:
         print("\n \nQuelle variable cherchez-vous ?")
         print("1. ")
@@ -457,7 +459,8 @@ elif groupe == 5:
             c = float(input("Longueur de l'arête : "))
             v = c * c * c
             print("Le volume du cube est de {:.2f} u³".format(v))
-
+        else:
+            print("Choix invalide. Veuillez relancer le script.")
     if geometrie == 2:
         print("\nQuelle grandeur cherchez-vous ?")
         print("1. Aire de la base")
