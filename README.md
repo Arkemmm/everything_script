@@ -8,7 +8,7 @@
 **5. Branchez votre Numworks et cliquez sur 'Envoyer sur ma calculatrice'**  
 
 **Note : Veuillez définir la police Python sur petite pour voir l'entièreté du code, suivez ceci si vous ne savez pas comment faire :**  
-**Rendez vous dans les paramètres puis :**  
+**Rendez vous dans les paramètres de votre calculatrice :**  
 
 ![1.](https://github.com/Arkemmm/everything_script/blob/main/numworks.png)  
 
