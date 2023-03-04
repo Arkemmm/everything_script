@@ -10,9 +10,9 @@
 **Note : Veuillez définir la police Python sur petite pour voir l'entièreté du code, suivez ceci si vous ne savez pas comment faire :**  
 **Rendez vous dans les paramètres puis :**  
 
-! 1.https://github.com/Arkemmm/everything_script/blob/7981bc4e0dd0cc3e8f2848e86073d385fcf7073e/numworks.png  
+! 1.numworks.png 
 
-! 2. https://github.com/Arkemmm/everything_script/blob/70c80e056c658410b283ca05a3bb7ec6ca4c5ea1/numworks_2.png  
+! 2. numworks_2.png  
 
 
 
