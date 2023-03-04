@@ -4,7 +4,7 @@ pi = 3.14159265359
 g = 9,80665
 c = 299792458
 # Affichage des formules
-print("Groupe de relations")
+print("\nGroupe de relations")
 print("1. Calculs d'énergie")
 print("2. Thermodynamique")
 print("3. Mécanique")
@@ -12,19 +12,19 @@ print("4. Courrants et signaux")
 print("5. Géométrie")
 groupe = int(input("Indiquez votre choix :"))
 if groupe == 1:
-    print("1. Energie cinétique")
+    print("\n1. Energie cinétique")
     print("2. Energie potentiel de pesanteur")
     print("3. Puissance hydraulique")
     print("4. Puissance photovoltaïque")
     energie = int(input("Indiquez votre choix :"))
     if energie == 1:
-        print("Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. E (en Joule)")
         print("2. M (en kg)")
         print("3. V (en m/s)")
         energie_cinetique = int(input("Indiquez votre choix :"))
         if energie_cinetique == 1:
-            m = float(input("Masse de l'objet :"))
+            m = float(input("\nMasse de l'objet :"))
             v = float(input("Vitesse de l'objet :"))
             E = (m / 2) * (v ** 2)
             print("L'énergie cinétique E = {:.2f} J".format(E))
@@ -39,7 +39,7 @@ if groupe == 1:
             v = ((2 * E) / m) ** 0.5
             print("La vitesse de l'objet est de {:.2f} m/s".format(v))
     elif energie == 2:
-        print("Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. E (en Joule)")
         print("2. M (en kg)")
         print("4. H (en m)")
@@ -57,7 +57,7 @@ if groupe == 1:
             masse = E / (g*h)
             print("La masse de l'objet est de {:.2f} kg".format(masse))
     elif energie == 3:
-        print("Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. P (en W)")
         print("2. Débit (en m³/s)")
         print("3. Δh (en m)")
@@ -81,7 +81,7 @@ if groupe == 1:
             h = P/(d*g*mv)
             print("La hauteur est de {:.2f} m".format(h))
     elif energie == 4:
-        print("Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. E (en Joule)")
         print("2. Surface (en m²)")
         print("3. Rendement (en %)")
@@ -116,13 +116,13 @@ if groupe == 1:
     else:
         print("Choix non valide")
 if groupe == 2:
-    print("1. Résistance thermique surfacique")
+    print("\n1. Résistance thermique surfacique")
     print("2. Flux thermique")
     print("3. Echange thermique")
     print("4. Changement d'état")
     thermodynamique = int(input("Indiquez votre choix :"))
     if thermodynamique == 1:
-        print("\n Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. Rth (en K/W)")
         print("2. Epaisseur (en m)")
         print("3. Conductivité thermique (en W/mK)")
@@ -146,7 +146,7 @@ if groupe == 2:
             conductivité = (epaisseur*surface)/Rths
             print("La conductivité thermique ' = {:.2f} W/mK".format(conductivité))
     elif thermodynamique == 2:
-        print("\n Quelle variable cherchez-vous ?")
+        print("\n \nQuelle variable cherchez-vous ?")
         print("1. Q (en W)")
         print("2. S (en m²)")
         print("3. ΔT (en °C)")
@@ -168,9 +168,9 @@ if groupe == 2:
             ΔT = FT_q / FT_S
             print("La différence de température ΔT = {:.2f} °C".format(ΔT))
         else:
-            print("Choix invalide. Veuillez réessayer.")
+            print("Choix invalide. Veuillez relancer le script.")
     elif thermodynamique == 3:
-        print("\n Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. E (en J)")
         print("1. C (en J/kg.K)")
         print("2. m (en kg)")
@@ -201,7 +201,7 @@ if groupe == 2:
             delta_T = E/(m*c)
             print("La différence de température ΔT = {:.2f} °C".format(delta_T))
     elif thermodynamique == 4:
-        print("\n Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. E (en J)")
         print("2. m (en kg)")
         print("3. L (en J/kg)")
@@ -222,18 +222,18 @@ if groupe == 2:
             l = E/m
             print("L’énergie massique de \n changement d’état est de = {:.2f} J/kg".format(l))
         else:
-            print("Choix invalide. Veuillez réessayer.")
+            print("Choix invalide. Veuillez relancer le script.")
     else:
-        print("Choix invalide. Veuillez réessayer.")
+        print("Choix invalide. Veuillez relancer le script.")
 elif groupe == 3:
-    print("1. Force")
+    print("\n1. Force")
     print("2. Travail")
     print("3. Puissance")
     print("4. Vitesse instantanée")
     print("5. Compensation des forces")
     mecanique = int(input("Indiquez votre choix :"))
     if mecanique == 1:
-        print("\n Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. F (en N)")
         print("2. m (en kg)")
         print("3. a (en m/s²)")
@@ -254,7 +254,7 @@ elif groupe == 3:
             a = F / m
             print("L'accélération de l'objet est de {:.2f} m/s²".format(a))
     elif mecanique == 2:
-        print("\n Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. W (en J)")
         print("2. F (en N)")
         print("3. d (en m)")
@@ -285,7 +285,7 @@ elif groupe == 3:
             d = W / F * cosinus
             print("La distance parcourue par l'objet est de {:.2f} m".format(d))
     elif mecanique == 3:
-        print("\n Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. P (en W)")
         print("2. C (en Nm)")
         print("3. Ꞷ (en rad/s)")
@@ -308,7 +308,7 @@ elif groupe == 3:
             print("La rotation est de {:.2f} rad/s".format(omega))
             print("La rotation est de {:.2f} tr/min".format(omega_tr))
     elif mecanique == 4:
-        print("\n Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. Vitesse de translation (en m/s)")
         print("2. Vitesse de rotation (en tr/min)")
         print("3. Diamètre (en m)")
@@ -331,7 +331,7 @@ elif groupe == 3:
             d = (60*v)/(pi*n)
             print("Le diamètre de la roue est de {:.2f} m".format(d))
     elif mecanique == 5:
-        print("\n Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. m (en kg)")
         print("2. v (en m/s)")
         print("3. S (en m²)")
@@ -358,15 +358,15 @@ elif groupe == 3:
             s = (2*m*g)/(p*cx*(v**2))
             print("La surface est {:.2f} m/s \n pour que les forces se compensent.".format(s))
     else:
-        print("Choix invalide. Veuillez réessayer.")
+        print("Choix invalide. Veuillez relancer le script.")
 elif groupe == 4:
-    print("1. Résistance équivalente")
+    print("\n1. Résistance équivalente")
     print("2. Puissance apparente")
     print("3. ")
     print("4. ")
     elec = int(input("Indiquez votre choix :"))
     if elec == 1:
-        print("\n Quelle configuration cherchez-vous ?")
+        print("\nQuelle configuration cherchez-vous ?")
         print("1. En dérivation")
         print("2. En série")
         resistance = int(input("Indiquez votre choix :"))
@@ -374,36 +374,36 @@ elif groupe == 4:
             R1 = int(input("Valeur de R1 (en ohm): "))
             R2 = int(input("Valeur de R2 (en ohm): "))
             Re = (R1*R2)/(R1 + R2)
-            print("\n La résistance équivalent vaut {:.2f} ohm.".format(Re))
+            print("\nLa résistance équivalent vaut {:.2f} ohm.".format(Re))
         elif resistance == 2:
             R1 = int(input("Valeur de R1 (en ohm): "))
             R2 = int(input("Valeur de R2 (en ohm): "))
             Re = R1 + R2
-            print("\n La résistance équivalent vaut {:.2f} ohm.".format(Re))
+            print("\nLa résistance équivalent vaut {:.2f} ohm.".format(Re))
     elif elec == 2:
-        print("\n Quelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. Calcul de Ueff")
         print("2. Calcul de Ieff")
         print("3. Calcul de S")
         apparente = int(input("Indiquez votre choix :"))
-        if == 1:
+        if apparente == 1:
             u = float(input("Umax (en V) :"))
             ueff = u/(math.sqrt(2))
-            print("La valeur de Ueff est de {:.2f} V".format(ueff))
+            print("\nLa valeur de Ueff est de {:.2f} V".format(ueff))
         elif == 2:
             i = float(input("Imax (en A) :"))
             ieff = i/(math.sqrt(2))
-            print("La valeur de Ieff est de {:.2f} A".format(ieff))
-        elif  == 3:
+            print("\nLa valeur de Ieff est de {:.2f} A".format(ieff))
+        elif apparente == 3:
             i = float(input("Ieff (en A) :"))
             u = float(input("Ueff (en V) :"))
             s = i*u
             print("La valeur de la puissance aparante est {:.2f} W".format(s))
-            print(" {:.2f} ".format())
-        elif  == 4:
-            print(" {:.2f} ".format())
+        else:
+            print("Choix invalide. Veuillez relancer le script.")
+
     elif elec == 3:
-        print("\n Quelle variable cherchez-vous ?")
+        print("\n \nQuelle variable cherchez-vous ?")
         print("1. ")
         print("2. ")
         print("3. ")
@@ -418,7 +418,7 @@ elif groupe == 4:
         elif  == 4:
             print(" {:.2f} ".format())
     elif elec == 4:
-        print("\n Quelle variable cherchez-vous ?")
+        print("\n \nQuelle variable cherchez-vous ?")
         print("1. ")
         print("2. ")
         print("3. ")
@@ -433,7 +433,7 @@ elif groupe == 4:
         elif  == 4:
             print(" {:.2f} ".format())
     else:
-        print("Choix invalide. Veuillez réessayer.")
+        print("Choix invalide. Veuillez relancer le script.")
 elif groupe == 5:
     print("1. Cube")
     print("2. Pyramide à base triangulaire")
@@ -445,7 +445,7 @@ elif groupe == 5:
     print("8. Prisme triangulaire")
     geometrie = float(input("Indiquez votre choix : "))
     if geometrie == 1:
-        print("Quelle grandeur cherchez-vous ?")
+        print("\nQuelle grandeur cherchez-vous ?")
         print("1. Aire de la base")
         print("2. Volume")
         choix = int(input("Indiquez votre choix : "))
@@ -459,7 +459,7 @@ elif groupe == 5:
             print("Le volume du cube est de {:.2f} u³".format(v))
 
     if geometrie == 2:
-        print("Quelle grandeur cherchez-vous ?")
+        print("\nQuelle grandeur cherchez-vous ?")
         print("1. Aire de la base")
         print("2. Volume")
         choix = int(input("Indiquez votre choix : "))
