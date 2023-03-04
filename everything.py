@@ -10,59 +10,58 @@ print("2. Thermodynamique")
 print("3. Mécanique")
 print("4. Courrants et signaux")
 print("5. Géométrie")
-groupe = float(input("Indiquez votre choix :"))
+groupe = int(input("Indiquez votre choix :"))
 if groupe == 1:
     print("1. Energie cinétique")
     print("2. Energie potentiel de pesanteur")
     print("3. Puissance hydraulique")
-    print("4. Energie photovoltaïque")
-    energie = float(input("Indiquez votre choix :"))
+    print("4. Puissance photovoltaïque")
+    energie = int(input("Indiquez votre choix :"))
     if energie == 1:
         print("Quelle variable cherchez-vous ?")
         print("1. E (en Joule)")
         print("2. M (en kg)")
         print("3. V (en m/s)")
-        energie_cinetique = float(input("Indiquez votre choix :"))
+        energie_cinetique = int(input("Indiquez votre choix :"))
         if energie_cinetique == 1:
-            EC_masse = float(input("Masse de l'objet :"))
-            EC_vitesse = float(input("Vitesse de l'objet :"))
-            Etot = (EC_masse / 2) * (EC_vitesse ** 2)
-            print("L'énergie cinétique E = {:.2f} J".format(Etot))
+            m = float(input("Masse de l'objet :"))
+            v = float(input("Vitesse de l'objet :"))
+            E = (m / 2) * (v ** 2)
+            print("L'énergie cinétique E = {:.2f} J".format(E))
         elif energie_cinetique == 2:
-            EC_vitesse = float(input("Vitesse de l'objet :"))
-            EC_energie = float(input("Energie cinétique de l'objet :"))
-            masse = (2 * EC_energie) / (EC_vitesse ** 2)
-            print("La masse de l'objet est de {:.2f} kg".format(masse))
-
+            v = float(input("Vitesse de l'objet :"))
+            E = float(input("Energie cinétique de l'objet :"))
+            m = (2 * E) / (v ** 2)
+            print("La masse de l'objet est de {:.2f} kg".format(m))
         elif energie_cinetique == 3:
-            EC_masse = float(input("Masse de l'objet :"))
-            EC_energie = float(input("Energie cinétique de l'objet :"))
-            vitesse = ((2 * EC_energie) / EC_masse) ** 0.5
-            print("La vitesse de l'objet est de {:.2f} m/s".format(vitesse))
+            m = float(input("Masse de l'objet :"))
+            E = float(input("Energie cinétique de l'objet :"))
+            v = ((2 * E) / m) ** 0.5
+            print("La vitesse de l'objet est de {:.2f} m/s".format(v))
     elif energie == 2:
         print("Quelle variable cherchez-vous ?")
         print("1. E (en Joule)")
         print("2. M (en kg)")
         print("4. H (en m)")
-        energie_potentielle = float(input("Indiquez votre choix :"))
+        energie_potentielle = int(input("Indiquez votre choix :"))
         if energie_potentielle == 1:
-            EP_masse = float(input("Masse de l'objet :"))
-            EP_hauteur = float(input("Hauteur de l'objet :"))
-            EP_gravite = float(input("Valeur de la gravité :"))
-            Epot = EP_masse * EP_gravite * EP_hauteur
-            print("L'énergie potentielle Ep = {:.2f} J".format(Epot))
+            m = float(input("Masse de l'objet (en kg) :"))
+            h = float(input("Hauteur de l'objet (en m) :"))
+            g = float(input("Valeur de la gravité (en m/s²) :"))
+            E = m * g * h
+            print("L'énergie potentielle Ep = {:.2f} J".format(E))
         elif energie_potentielle == 2:
-            EP_hauteur = float(input("Hauteur de l'objet :"))
-            EP_gravite = float(input("Valeur de la gravité :"))
-            EP_energie = float(input("Energie potentielle de l'objet :"))
-            masse = EP_energie / (EP_gravite * EP_hauteur)
-            print("La masse de lo'bjet est de {:.2f} kg".format(masse))
+            h = float(input("Hauteur de l'objet (en m) :"))
+            g = float(input("Valeur de la gravité (en m/s²) :"))
+            E = float(input("Energie potentielle de l'objet (en J) :"))
+            masse = E / (g*h)
+            print("La masse de l'objet est de {:.2f} kg".format(masse))
     elif energie == 3:
         print("Quelle variable cherchez-vous ?")
         print("1. P (en W)")
         print("2. Débit (en m³/s)")
         print("3. Δh (en m)")
-        puissance_hydraulique = float(input("Indiquez votre choix :"))
+        puissance_hydraulique = int(input("Indiquez votre choix :"))
         if puissance_hydraulique == 1:
             d = float(input("Débit (en m³/s) :"))
             h = float(input("Δh  (en m) :"))
@@ -80,30 +79,31 @@ if groupe == 1:
             d = float(input("Débit (en m³/s) :"))
             mv = float(input("Masse volumique du fluide :"))
             h = P/(d*g*mv)
+            print("La hauteur est de {:.2f} m".format(h))
     elif energie == 4:
         print("Quelle variable cherchez-vous ?")
         print("1. E (en Joule)")
         print("2. Surface (en m²)")
         print("3. Rendement (en %)")
         print("4. Flux solaire incident")
-        energie_photovoltaique = float(input("Indiquez votre choix :"))
+        energie_photovoltaique = int(input("Indiquez votre choix :"))
         if energie_photovoltaique == 1:
-            EPV_surface = float(input("Surface du panneau :"))
-            EPV_rendement = float(input("Rendement du panneau :"))
-            EPV_flux_solaire = float(input("Flux solaire incident :"))
-            Epv = EPV_surface * EPV_rendement * EPV_flux_solaire
-            print("L'énergie photovoltaïque E = {:.2f} J".format(Epv))
+            s = float(input("Surface du panneau (en m²) :"))
+            n = float(input("Rendement du panneau (en %) :"))
+            i = float(input("Irradiance (en W/m²) :"))
+            P = s * (n/100) * i
+            print("L'énergie photovoltaïque E = {:.2f} J".format(P))
         elif energie_photovoltaique == 2:
-            EPV_rendement = float(input("Rendement du panneau :"))
-            EPV_flux_solaire = float(input("Flux solaire incident :"))
-            EPV_energie = float(input("Energie photovoltaïque de l'objet :"))
-            surface = EPV_energie / (EPV_rendement * EPV_flux_solaire)
-            print("La surface du panneau est de {:.2f} m²".format(surface))
+            n = float(input("Rendement du panneau (en %):"))
+            i = float(input("Irradiance (en W/m²) :"))
+            E = float(input("Puissance photovoltaïque (en W) :"))
+            s = E / ((n/100) * i)
+            print("La surface du panneau est de {:.2f} m²".format(s))
         elif energie_photovoltaique == 3:
-            EPV_surface = float(input("Surface du panneau :"))
-            EPV_flux_solaire = float(input("Flux solaire incident :"))
-            EPV_energie = float(input("Energie photovoltaïque de l'objet :"))
-            rendement = EPV_energie / (EPV_surface * EPV_flux_solaire) * 100
+            s = float(input("Surface du panneau (en m²) :"))
+            i = float(input("Irradiance (en W/m²) :"))
+            P = float(input("Puissance photovoltaïque (en W) :"))
+            rendement = P / (s * i) * 100
             print("Le rendement du panneau est de {:.2f} %".format(rendement))
         elif energie_photovoltaique == 4:
             EPV_surface = float(input("Surface du panneau :"))
@@ -120,13 +120,13 @@ if groupe == 2:
     print("2. Flux thermique")
     print("3. Echange thermique")
     print("4. Changement d'état")
-    thermodynamique = float(input("Indiquez votre choix :"))
+    thermodynamique = int(input("Indiquez votre choix :"))
     if thermodynamique == 1:
         print("\n Quelle variable cherchez-vous ?")
         print("1. Rth (en K/W)")
         print("2. Epaisseur (en m)")
         print("3. Conductivité thermique (en W/mK)")
-        resistance_thermique = float(input("Indiquez votre choix :"))
+        resistance_thermique = int(input("Indiquez votre choix :"))
         if resistance_thermique == 1:
             epaisseur = float(input("Epaisseur (en mètre) :"))
             conductivité = float(input("Conductivité thermique (en W/mK):"))
@@ -150,7 +150,7 @@ if groupe == 2:
         print("1. Q (en W)")
         print("2. S (en m²)")
         print("3. ΔT (en °C)")
-        flux_thermique = float(input("Indiquez votre choix :"))
+        flux_thermique = int(input("Indiquez votre choix :"))
         if flux_thermique == 1:
             FT_S = float(input("Surface d'échange thermique (en m²) :"))
             FT_ΔT = float(input("Différence de température (en °C) :"))
@@ -175,7 +175,7 @@ if groupe == 2:
         print("1. C (en J/kg.K)")
         print("2. m (en kg)")
         print("3. ΔT (en °C)")
-        chaleur = float(input("Indiquez votre choix :"))
+        chaleur = int(input("Indiquez votre choix :"))
         if chaleur == 1:
             m = float(input("Masse (en kg) :"))
             t = float(input("Différence de température (en °C) :"))
@@ -187,7 +187,7 @@ if groupe == 2:
             delta_T = float(input("Différence de température (en °C) :"))
             E = float(input("Énergie échangée (en J) :"))
             c = E/(m*delta_T)
-            print("La capacité thermique massique C = {:.2f} J/kg.K".format(Cp))
+            print("La capacité thermique massique C = {:.2f} J/kg.K".format(c))
         elif chaleur == 3:
             c = float(input("Capacité thermique massique (en J/kg.K) :"))
             delta_T = float(input("Différence de température (en °C) :"))
@@ -205,7 +205,7 @@ if groupe == 2:
         print("1. E (en J)")
         print("2. m (en kg)")
         print("3. L (en J/kg)")
-        etat = float(input("Indiquez votre choix :"))
+        etat = int(input("Indiquez votre choix :"))
         if etat == 1:
             m = float(input("Masse de l'échantillon (en kg) :"))
             l = float(input("Energie massique de \n changement d'état (en J/kg) :"))
@@ -231,13 +231,13 @@ elif groupe == 3:
     print("3. Puissance")
     print("4. Vitesse instantanée")
     print("5. Compensation des forces")
-    mecanique = float(input("Indiquez votre choix :"))
+    mecanique = int(input("Indiquez votre choix :"))
     if mecanique == 1:
         print("\n Quelle variable cherchez-vous ?")
         print("1. F (en N)")
         print("2. m (en kg)")
         print("3. a (en m/s²)")
-        force = float(input("Indiquez votre choix :"))
+        force = int(input("Indiquez votre choix :"))
         if force == 1:
             m = float(input("Masse de l'objet :"))
             a = float(input("Accélération de l'objet :"))
@@ -259,7 +259,7 @@ elif groupe == 3:
         print("2. F (en N)")
         print("3. d (en m)")
         print("4. α (en degrés)")
-        travail = float(input("Indiquez votre choix :"))
+        travail = int(input("Indiquez votre choix :"))
         if travail == 1:
             F = float(input("Force appliquée sur l'objet :"))
             d = float(input("Distance parcourue par l'objet :"))
@@ -289,7 +289,7 @@ elif groupe == 3:
         print("1. P (en W)")
         print("2. C (en Nm)")
         print("3. Ꞷ (en rad/s)")
-        puissance_couple = float(input("Indiquez votre choix :"))
+        puissance_couple = int(input("Indiquez votre choix :"))
         if puissance_couple == 1:
             C = float(input("Couple (en Nm):"))
             omega = float(input("Rotation (en rad/s) :"))
@@ -312,7 +312,7 @@ elif groupe == 3:
         print("1. Vitesse de translation (en m/s)")
         print("2. Vitesse de rotation (en tr/min)")
         print("3. Diamètre (en m)")
-        vitesse = float(input("Indiquez votre choix :"))
+        vitesse = int(input("Indiquez votre choix :"))
         if vitesse == 1:
             n = float(input("Rotation en tr/min :"))
             d = float(input("Diamètre de la roue :"))
@@ -335,7 +335,7 @@ elif groupe == 3:
         print("1. m (en kg)")
         print("2. v (en m/s)")
         print("3. S (en m²)")
-        frottement = float(input("Indiquez votre choix :"))
+        frottement = int(input("Indiquez votre choix :"))
         if frottement == 1:
             cx =float(input("Coéficient de trainée :"))
             p =float(input("Masse volumique du fluide (kg/m³) :"))
@@ -408,7 +408,7 @@ elif groupe == 4:
         print("2. ")
         print("3. ")
         print("4. ")
-         = float(input("Indiquez votre choix :"))
+         = int(input("Indiquez votre choix :"))
         if == 1:
             print(" {:.2f} ".format())
         elif == 2:
@@ -423,7 +423,7 @@ elif groupe == 4:
         print("2. ")
         print("3. ")
         print("4. ")
-         = float(input("Indiquez votre choix :"))
+         = int(input("Indiquez votre choix :"))
         if == 1:
             print(" {:.2f} ".format())
         elif == 2:
