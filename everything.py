@@ -520,3 +520,7 @@ elif groupe == 5:
             h = float(input("Hauteur de la pyramide : "))
             volume = (1/3) * b * b * h
             print("Le volume de la pyramide à base triangulaire est de {:.2f} u³".format(volume))
+    else:
+        print("\nChoix invalide. Veuillez relancer le script.")
+else:
+    print("\nChoix invalide. Veuillez relancer le script.")
