@@ -1,5 +1,8 @@
 # everything_script (0.4)  
 
+---
+#Actuellement trop gros pour la mémoire de la calculatrice, je cherche une solution mais ça va prendre du temps
+
 ## Comment l'utiliser ?  
 **1. Copier l'entièreté du code Python**  
 **2. Rendez vous sur https://my.numworks.com/ avec le navigateur Chrome**  
