@@ -153,7 +153,7 @@ if groupe == 2:
             s = e/(Rths*λ)
             print("La surface du mur est de = {:.2f} m²".format(s))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     elif thermodynamique == 2:
         print("\nQuelle variable cherchez-vous ?")
         print("1. Q (en W)")
@@ -177,7 +177,7 @@ if groupe == 2:
             ΔT = FT_q / FT_S
             print("La différence de température ΔT = {:.2f} °C".format(ΔT))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     elif thermodynamique == 3:
         print("\nQuelle variable cherchez-vous ?")
         print("1. E (en J)")
@@ -210,7 +210,7 @@ if groupe == 2:
             delta_T = E/(m*c)
             print("La différence de température ΔT = {:.2f} °C".format(delta_T))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     elif thermodynamique == 4:
         print("\nQuelle variable cherchez-vous ?")
         print("1. E (en J)")
@@ -233,9 +233,9 @@ if groupe == 2:
             l = E/m
             print("L’énergie massique de \n changement d’état est de = {:.2f} J/kg".format(l))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     else:
-        print("Choix invalide. Veuillez relancer le script.")
+        print("\nChoix invalide. Veuillez relancer le script.")
 elif groupe == 3:
     print("\n1. Force")
     print("2. Travail")
@@ -265,7 +265,7 @@ elif groupe == 3:
             a = F / m
             print("\nL'accélération de l'objet est de {:.2f} m/s²".format(a))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     elif mecanique == 2:
         print("\nQuelle variable cherchez-vous ?")
         print("1. W (en J)")
@@ -298,7 +298,7 @@ elif groupe == 3:
             d = W / F * cosinus
             print("La distance parcourue par l'objet est de {:.2f} m".format(d))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     elif mecanique == 3:
         print("\nQuelle variable cherchez-vous ?")
         print("1. P (en W)")
@@ -323,7 +323,7 @@ elif groupe == 3:
             print("La rotation est de {:.2f} rad/s".format(omega))
             print("La rotation est de {:.2f} tr/min".format(omega_tr))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     elif mecanique == 4:
         print("\nQuelle variable cherchez-vous ?")
         print("1. Vitesse de translation (en m/s)")
@@ -348,7 +348,7 @@ elif groupe == 3:
             d = (60*v)/(pi*n)
             print("Le diamètre de la roue est de {:.2f} m".format(d))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     elif mecanique == 5:
         print("\nQuelle variable cherchez-vous ?")
         print("1. m (en kg)")
@@ -377,14 +377,14 @@ elif groupe == 3:
             s = (2*m*g)/(p*cx*(v**2))
             print("La surface est {:.2f} m/s \n pour que les forces se compensent.".format(s))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     else:
-        print("Choix invalide. Veuillez relancer le script.")
+        print("\nChoix invalide. Veuillez relancer le script.")
 elif groupe == 4:
     print("\n1. Résistance équivalente")
     print("2. Puissance apparente")
     print("3. Energie d'une onde")
-    print("4. ")
+    print("4. Résistance d'un fil")
     elec = int(input("Indiquez votre choix :"))
     if elec == 1:
         print("\nQuelle configuration cherchez-vous ?")
@@ -419,9 +419,9 @@ elif groupe == 4:
             i = float(input("Ieff (en A) :"))
             u = float(input("Ueff (en V) :"))
             s = i*u
-            print("La valeur de la puissance aparante est {:.2f} W".format(s))
+            print("\nLa valeur de la puissance aparante est {:.2f} W".format(s))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     elif elec == 3:
         print("\nQuelle variable cherchez-vous ?")
         print("1. Energie de l'onde (en J)")
@@ -441,26 +441,45 @@ elif groupe == 4:
             v = c/l
             print("La fréquence de l'onde est de {:.2e} Hz".format(v))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     elif elec == 4:
         print("\nQuelle variable cherchez-vous ?")
-        print("1. ")
-        print("2. ")
-        print("3. ")
-        print("4. ")
-         = int(input("Indiquez votre choix :"))
-        if == 1:
-            print(" {:.2f} ".format())
-        elif == 2:
-            print(" {:.2f} ".format())
-        elif  == 3:
-            print(" {:.2f} ".format())
-        elif  == 4:
-            print(" {:.2f} ".format())
+        print("1. La résistance du fil (en Ω) :")
+        print("2. Sa surface (en m²)")
+        print("3. Sa longueur (en m)")
+        print("4. ρ (en Ωm) :")
+        cable = int(input("Indiquez votre choix :"))
+        if cable == 1:
+            d = float(input("Diamètre du fil (en m) :"))
+            rm = float(input("Résistivité du matériau ρ (en Ωm) :"))
+            l = float(input("Longueur du fil (en m) :"))
+            s = pi*((d/2)**2)
+            r = rm*(l/s)
+            print("\nLa résistance du fil est de {:.2f} Ω".format(r))
+        elif cable == 2:
+            rm = float(input("Résistivité du matériau ρ (en Ωm) :"))
+            r = float(input("Résistance du fil (en Ω) :"))
+            l = float(input("Longueur du fil (en m) :"))
+            s = (rm*l)/r
+            print("\nLa surface du cable est de {:.2f} m²".format(s))
+        elif cable == 3:
+            r = float(input("Résistance du fil (en Ω) :"))
+            rm = float(input("Résistivité du matériau ρ (en Ωm) :"))
+            d = float(input("Diamètre du fil (en m) :"))
+            s = pi*((d/2)**2)
+            l = (r*s)/rm
+            print("\nLa longueur du fil est de {:.2f} m".format(l))
+        elif cable == 4:
+            r = float(input("Résistance du fil (en Ω) :"))
+            d = float(input("Diamètre du fil (en m) :"))
+            l = float(input("Longueur du fil (en m) :"))
+            s = pi*((d/2)**2)
+            rm = (r*s)/l
+            print("\nLa résistivité du matériau ρ = {:.2f} Ωm".format(rm))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     else:
-        print("Choix invalide. Veuillez relancer le script.")
+        print("\nChoix invalide. Veuillez relancer le script.")
 elif groupe == 5:
     print("\n1. Cube")
     print("2. Pyramide à base triangulaire")
@@ -485,7 +504,7 @@ elif groupe == 5:
             v = c * c * c
             print("Le volume du cube est de {:.2f} u³".format(v))
         else:
-            print("Choix invalide. Veuillez relancer le script.")
+            print("\nChoix invalide. Veuillez relancer le script.")
     if geometrie == 2:
         print("\nQuelle grandeur cherchez-vous ?")
         print("1. Aire de la base")
