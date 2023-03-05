@@ -3,6 +3,7 @@ import math
 pi = 3.14159265359
 g = 9,80665
 c = 299792458
+h = 6,62607015E-24
 # Affichage des formules
 print("\nGroupe de relations")
 print("1. Calculs d'énergie")
@@ -154,7 +155,7 @@ if groupe == 2:
         else:
             print("Choix invalide. Veuillez relancer le script.")
     elif thermodynamique == 2:
-        print("\n \nQuelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
         print("1. Q (en W)")
         print("2. S (en m²)")
         print("3. ΔT (en °C)")
@@ -382,7 +383,7 @@ elif groupe == 3:
 elif groupe == 4:
     print("\n1. Résistance équivalente")
     print("2. Puissance apparente")
-    print("3. ")
+    print("3. Energie d'une onde")
     print("4. ")
     elec = int(input("Indiquez votre choix :"))
     if elec == 1:
@@ -410,7 +411,7 @@ elif groupe == 4:
             u = float(input("Umax (en V) :"))
             ueff = u/(math.sqrt(2))
             print("\nLa valeur de Ueff est de {:.2f} V".format(ueff))
-        elif == 2:
+        elif apparente == 2:
             i = float(input("Imax (en A) :"))
             ieff = i/(math.sqrt(2))
             print("\nLa valeur de Ieff est de {:.2f} A".format(ieff))
@@ -421,9 +422,28 @@ elif groupe == 4:
             print("La valeur de la puissance aparante est {:.2f} W".format(s))
         else:
             print("Choix invalide. Veuillez relancer le script.")
-
     elif elec == 3:
-        print("\n \nQuelle variable cherchez-vous ?")
+        print("\nQuelle variable cherchez-vous ?")
+        print("1. Energie de l'onde (en J)")
+        print("2. Longueur d'onde (en m)")
+        print("3. Fréquence de l'onde (en Hz)")
+        onde = int(input("Indiquez votre choix :"))
+        if onde == 1:
+            l = float(input("Longueur d'onde (en m) :"))
+            E = h * c/l
+            print("\nL'énergie de l'onde est de {:.2f} J".format(E))
+        elif onde == 2:
+            E = float(input("Energie de l'onde :"))
+            l = (h*c)/E
+            print("\nLa longeur de l'onde est de {:.2f} m".format(l))
+        elif onde== 3:
+            l = float(input("Longueur d'onde (en m) :"))
+            v = c/l
+            print("La fréquence de l'onde est de {:.2e} Hz".format(v))
+        else:
+            print("Choix invalide. Veuillez relancer le script.")
+    elif elec == 4:
+        print("\nQuelle variable cherchez-vous ?")
         print("1. ")
         print("2. ")
         print("3. ")
@@ -439,25 +459,10 @@ elif groupe == 4:
             print(" {:.2f} ".format())
         else:
             print("Choix invalide. Veuillez relancer le script.")
-    elif elec == 4:
-        print("\n \nQuelle variable cherchez-vous ?")
-        print("1. ")
-        print("2. ")
-        print("3. ")
-        print("4. ")
-         = int(input("Indiquez votre choix :"))
-        if == 1:
-            print(" {:.2f} ".format())
-        elif == 2:
-            print(" {:.2f} ".format())
-        elif  == 3:
-            print(" {:.2f} ".format())
-        elif  == 4:
-            print(" {:.2f} ".format())
     else:
         print("Choix invalide. Veuillez relancer le script.")
 elif groupe == 5:
-    print("1. Cube")
+    print("\n1. Cube")
     print("2. Pyramide à base triangulaire")
     print("3. Pyramide à base carrée")
     print("4. Cylindre")
