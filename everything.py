@@ -82,35 +82,35 @@ if groupe == 1:
             print("La hauteur est de {:.2f} m".format(h))
     elif energie == 4:
         print("\nQuelle variable cherchez-vous ?")
-        print("1. E (en Joule)")
+        print("1. Puissance utile (en W)")
         print("2. Surface (en m²)")
         print("3. Rendement (en %)")
-        print("4. Flux solaire incident")
+        print("4. Irradiance (en W/m²)")
         energie_photovoltaique = int(input("Indiquez votre choix :"))
         if energie_photovoltaique == 1:
             s = float(input("Surface du panneau (en m²) :"))
             n = float(input("Rendement du panneau (en %) :"))
             i = float(input("Irradiance (en W/m²) :"))
             P = s * (n/100) * i
-            print("L'énergie photovoltaïque E = {:.2f} J".format(P))
+            print("La puissance utile est de = {:.2f} W".format(P))
         elif energie_photovoltaique == 2:
             n = float(input("Rendement du panneau (en %):"))
             i = float(input("Irradiance (en W/m²) :"))
-            E = float(input("Puissance photovoltaïque (en W) :"))
+            E = float(input("Puissance utile du panneau (en W) :"))
             s = E / ((n/100) * i)
             print("La surface du panneau est de {:.2f} m²".format(s))
         elif energie_photovoltaique == 3:
             s = float(input("Surface du panneau (en m²) :"))
             i = float(input("Irradiance (en W/m²) :"))
-            P = float(input("Puissance photovoltaïque (en W) :"))
-            rendement = P / (s * i) * 100
-            print("Le rendement du panneau est de {:.2f} %".format(rendement))
+            P = float(input("Puissance utile du panneau (en W) :"))
+            n = P / (s * i) * 100
+            print("Le rendement du panneau est de {:.2f} %".format(n))
         elif energie_photovoltaique == 4:
-            EPV_surface = float(input("Surface du panneau :"))
-            EPV_rendement = float(input("Rendement du panneau :"))
-            EPV_energie = float(input("Energie photovoltaïque de l'objet :"))
-            flux_solaire = EPV_energie / (EPV_surface * EPV_rendement)
-            print("Le flux solaire incident est de {:.2f} W/m²".format(flux_solaire))
+            s = float(input("Surface du panneau (en m²) :"))
+            n = float(input("Rendement du panneau (en %) :"))
+            E = float(input("Puissance utile du panneau :"))
+            i = E / (s * n)
+            print("L'irradiance est de {:.2f} W/m²".format(i))
         else:
             print("Choix non valide")
     else:
@@ -125,26 +125,34 @@ if groupe == 2:
         print("\nQuelle variable cherchez-vous ?")
         print("1. Rth (en K/W)")
         print("2. Epaisseur (en m)")
-        print("3. Conductivité thermique (en W/mK)")
-        resistance_thermique = int(input("Indiquez votre choix :"))
-        if resistance_thermique == 1:
-            epaisseur = float(input("Epaisseur (en mètre) :"))
-            conductivité = float(input("Conductivité thermique (en W/mK):"))
-            surface = float(input("Surface (en m²) :"))
-            Rths = (epaisseur*surface)/conductivité
+        print("3. Conductivité thermique λ (en W/mK)")
+        rth = int(input("Indiquez votre choix :"))
+        if rth == 1:
+            e = float(input("Epaisseur (en mètre) :"))
+            λ = float(input("Conductivité thermique λ (en W/mK):"))
+            s = float(input("Surface (en m²) :"))
+            Rths = e/(λ*s)
             print("Le résistance thermique Rths = {:.2f} K/W".format(Rths))
-        elif resistance_thermique == 2:
+        elif rth == 2:
             Rths = float(input("Résistance thermique (en K/W)) :"))
-            conductivité = float(input("Conductivité thermique (en W/mK):"))
-            surface = float(input("Surface (en m²) :"))
-            epaisseur = (Rths*conductivité)/surface
-            print("L'épaisseur E ' = {:.2f} m".format(epaisseur))
-        elif resistance_thermique == 3:
-            Rths = float(input("Résistance thermique (en K/W)) :"))
-            epaisseur = float(input("Epaisseur (en mètre) :"))
-            surface = float(input("Surface (en m²) :"))
-            conductivité = (epaisseur*surface)/Rths
-            print("La conductivité thermique ' = {:.2f} W/mK".format(conductivité))
+            λ = float(input("Conductivité thermique λ (en W/mK):"))
+            s = float(input("Surface (en m²) :"))
+            e = Rths*λ*s
+            print("L'épaisseur E = {:.2f} m".format(e))
+        elif rth == 3:
+            Rths = float(input("Résistance thermique λ (en K/W)) :"))
+            e = float(input("Epaisseur (en mètre) :"))
+            s = float(input("Surface (en m²) :"))
+            λ = e/(Rths*s)
+            print("La conductivité thermique λ = {:.2f} W/mK".format(λ))
+        elif rth == 4:
+            Rths = float(input("Résistance thermique λ (en K/W)) :"))
+            e = float(input("Epaisseur (en mètre) :"))
+            λ = float(input("Conductivité thermique λ (en W/mK):"))
+            s = e/(Rths*λ)
+            print("La surface du mur est de = {:.2f} m²".format(s))
+        else:
+            print("Choix invalide. Veuillez relancer le script.")
     elif thermodynamique == 2:
         print("\n \nQuelle variable cherchez-vous ?")
         print("1. Q (en W)")
@@ -200,6 +208,8 @@ if groupe == 2:
             E = float(input("Énergie échangée (en J) :"))
             delta_T = E/(m*c)
             print("La différence de température ΔT = {:.2f} °C".format(delta_T))
+        else:
+            print("Choix invalide. Veuillez relancer le script.")
     elif thermodynamique == 4:
         print("\nQuelle variable cherchez-vous ?")
         print("1. E (en J)")
@@ -242,17 +252,19 @@ elif groupe == 3:
             m = float(input("Masse de l'objet :"))
             a = float(input("Accélération de l'objet :"))
             F = m * a
-            print("La force F = {:.2f} N".format(F))
+            print("\nLa force F = {:.2f} N".format(F))
         elif force == 2:
             F = float(input("Force appliquée sur l'objet :"))
             a = float(input("Accélération de l'objet :"))
             m = F / a
-            print("La masse de l'objet est de {:.2f} kg".format(m))
+            print("\nLa masse de l'objet est de {:.2f} kg".format(m))
         elif force == 3:
             F = float(input("Force appliquée sur l'objet :"))
             m = float(input("Masse de l'objet :"))
             a = F / m
-            print("L'accélération de l'objet est de {:.2f} m/s²".format(a))
+            print("\nL'accélération de l'objet est de {:.2f} m/s²".format(a))
+        else:
+            print("Choix invalide. Veuillez relancer le script.")
     elif mecanique == 2:
         print("\nQuelle variable cherchez-vous ?")
         print("1. W (en J)")
@@ -284,6 +296,8 @@ elif groupe == 3:
             cosinus = math.cos(angle_en_rad)
             d = W / F * cosinus
             print("La distance parcourue par l'objet est de {:.2f} m".format(d))
+        else:
+            print("Choix invalide. Veuillez relancer le script.")
     elif mecanique == 3:
         print("\nQuelle variable cherchez-vous ?")
         print("1. P (en W)")
@@ -307,6 +321,8 @@ elif groupe == 3:
             omega_tr = (omega*2*pi)/60
             print("La rotation est de {:.2f} rad/s".format(omega))
             print("La rotation est de {:.2f} tr/min".format(omega_tr))
+        else:
+            print("Choix invalide. Veuillez relancer le script.")
     elif mecanique == 4:
         print("\nQuelle variable cherchez-vous ?")
         print("1. Vitesse de translation (en m/s)")
@@ -330,6 +346,8 @@ elif groupe == 3:
             v = float(input("Vitesse de translation :"))
             d = (60*v)/(pi*n)
             print("Le diamètre de la roue est de {:.2f} m".format(d))
+        else:
+            print("Choix invalide. Veuillez relancer le script.")
     elif mecanique == 5:
         print("\nQuelle variable cherchez-vous ?")
         print("1. m (en kg)")
@@ -357,6 +375,8 @@ elif groupe == 3:
             v = float(input("Vitesse (em m/s) :"))
             s = (2*m*g)/(p*cx*(v**2))
             print("La surface est {:.2f} m/s \n pour que les forces se compensent.".format(s))
+        else:
+            print("Choix invalide. Veuillez relancer le script.")
     else:
         print("Choix invalide. Veuillez relancer le script.")
 elif groupe == 4:
